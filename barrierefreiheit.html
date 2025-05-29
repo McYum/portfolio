@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="de" class="dark-mode">
+<html lang="en" class="dark-mode">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erklärung zur Barrierefreiheit - Bobohs Portfolio</title>
-    <meta name="description" content="Erklärung zur Barrierefreiheit für das Portfolio von Boboh.">
+    <title>Accessibility Statement - Boboh's Portfolio</title>
+    <meta name="description" content="Accessibility Statement for Boboh's Portfolio.">
 
     <script> /* Anti-Flashbang Script */ (function() { const themes = ['dark-mode', 'light-mode', 'high-contrast-mode']; let pageDefaultTheme = document.documentElement.classList.contains('dark-mode') ? 'dark-mode' : document.documentElement.classList.contains('high-contrast-mode') ? 'high-contrast-mode' : 'light-mode'; let currentThemeClass = pageDefaultTheme; try { const savedThemeIndex = localStorage.getItem('portfolioThemeIndex'); if (savedThemeIndex !== null) { const themeIndex = parseInt(savedThemeIndex, 10); if (themeIndex >= 0 && themeIndex < themes.length) { currentThemeClass = themes[themeIndex]; } } } catch (e) {} themes.forEach(theme => document.documentElement.classList.remove(theme)); document.documentElement.classList.add(currentThemeClass); })();</script>
 
     <link rel="stylesheet" href="css/style.css">
-    <style> /* Identische Styles wie in impressum.html für .legal-page-main etc. */ .legal-page-main { padding: 40px 6vw; background-color: var(--bg-primary-content); color: var(--text-primary); flex-grow: 1; display: flex; flex-direction: column; align-items: center; } .legal-content-container { max-width: 800px; width: 100%; margin: 20px 0; padding: 30px; background-color: var(--bg-secondary-content); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border-secondary); color: var(--text-card-primary); } .legal-content-container h1 { text-align: center; margin-bottom: 30px; font-family: 'Dela Gothic One', cursive; font-size: 2em; color: var(--text-accent); } .legal-content-container h2 { font-family: 'Inter', sans-serif; font-size: 1.5em; color: var(--text-accent); margin-top: 25px; margin-bottom: 10px; border-bottom: 1px solid var(--border-secondary); padding-bottom: 5px; } .legal-content-container p, .legal-content-container ul { font-family: 'Inter', sans-serif; font-size: 1em; line-height: 1.7; color: var(--text-card-primary); margin-bottom: 1.2em; } .legal-content-container ul { padding-left: 25px; list-style-type: disc; } .legal-content-container address { font-style: normal; margin-bottom: 1.2em; } .legal-content-container a { color: var(--text-accent); text-decoration: underline; } .legal-content-container a:hover, .legal-content-container a:focus-visible { color: var(--highlight-color); text-decoration: none; } .active-footer-nav { font-weight: bold; } </style>
+    <style> /* Identical Styles as in legal_notice.html for .legal-page-main etc. */ .legal-page-main { padding: 40px 6vw; background-color: var(--bg-primary-content); color: var(--text-primary); flex-grow: 1; display: flex; flex-direction: column; align-items: center; } .legal-content-container { max-width: 800px; width: 100%; margin: 20px 0; padding: 30px; background-color: var(--bg-secondary-content); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border-secondary); color: var(--text-card-primary); } .legal-content-container h1 { text-align: center; margin-bottom: 30px; font-family: 'Dela Gothic One', cursive; font-size: 2em; color: var(--text-accent); } .legal-content-container h2 { font-family: 'Inter', sans-serif; font-size: 1.5em; color: var(--text-accent); margin-top: 25px; margin-bottom: 10px; border-bottom: 1px solid var(--border-secondary); padding-bottom: 5px; } .legal-content-container p, .legal-content-container ul { font-family: 'Inter', sans-serif; font-size: 1em; line-height: 1.7; color: var(--text-card-primary); margin-bottom: 1.2em; } .legal-content-container ul { padding-left: 25px; list-style-type: disc; } .legal-content-container address { font-style: normal; margin-bottom: 1.2em; } .legal-content-container a { color: var(--text-accent); text-decoration: underline; } .legal-content-container a:hover, .legal-content-container a:focus-visible { color: var(--highlight-color); text-decoration: none; } .active-footer-nav { font-weight: bold; } </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,68 +19,68 @@
 <body>
     <div class="overlay"></div>
     <header class="page-header" role="banner">
-        <nav class="main-navigation" aria-label="Hauptnavigation">
+        <nav class="main-navigation" aria-label="Main Navigation">
             <ul>
-                <li><a href="index.html#about"><span class="link-text-wrapper">Über Mich</span></a></li>
-                <li><a href="index.html#projects"><span class="link-text-wrapper">Projekte</span></a></li>
-                <li><a href="css-art.html"><span class="link-text-wrapper">CSS Tier Kunst</span></a></li>
-                <li><a href="favorites-form.html"><span class="link-text-wrapper">Favoriten Formular</span></a></li>
+                <li><a href="index.html#about"><span class="link-text-wrapper">ABOUT ME</span></a></li>
+                <li><a href="index.html#projects"><span class="link-text-wrapper">PROJECTS</span></a></li>
+                <li><a href="css-art.html"><span class="link-text-wrapper">CSS ART</span></a></li>
+                <li><a href="favorites-form.html"><span class="link-text-wrapper">FAVORITES FORM</span></a></li>
             </ul>
         </nav>
         <div class="theme-switcher-container">
-            <button id="theme-toggle-button" aria-label="Theme wechseln" title="Theme wechseln"><span class="icon-wrapper"><i class="fas fa-sun light-icon theme-icon" aria-hidden="true"></i><i class="fas fa-moon dark-icon theme-icon" aria-hidden="true"></i><i class="fas fa-adjust contrast-icon theme-icon" aria-hidden="true"></i></span></button>
+            <button id="theme-toggle-button" aria-label="Switch Theme" title="Switch Theme"><span class="icon-wrapper"><i class="fas fa-sun light-icon theme-icon" aria-hidden="true"></i><i class="fas fa-moon dark-icon theme-icon" aria-hidden="true"></i><i class="fas fa-adjust contrast-icon theme-icon" aria-hidden="true"></i></span></button>
         </div>
     </header>
 
     <main role="main" class="legal-page-main">
-        <article class="legal-content-container" aria-labelledby="barrierefreiheit-heading">
-            <h1 id="barrierefreiheit-heading">Erklärung zur Barrierefreiheit</h1>
+        <article class="legal-content-container" aria-labelledby="accessibility-statement-heading">
+            <h1 id="accessibility-statement-heading">Accessibility Statement</h1>
 
-            <p>Bobohs Portfolio ist bemüht, diese Website im Einklang mit den Web Content Accessibility Guidelines (WCAG) 2.1 Level AA zugänglich zu machen. Diese Erklärung zur Barrierefreiheit gilt für die unter der Domain [Deine GitLab Pages URL, z.B. boboh.gitlab.io/portfolio] erreichbare Website.</p>
+            <p>Boboh's Portfolio strives to make this website accessible in accordance with the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. This accessibility statement applies to the website accessible under the domain [Your GitLab Pages URL, e.g., boboh.gitlab.io/portfolio].</p>
             
-            <section aria-labelledby="barrierefreiheit-stand">
-                <h2 id="barrierefreiheit-stand">Stand der Vereinbarkeit mit den Anforderungen</h2>
-                <p>Diese Website ist nach Selbstbewertung weitgehend mit den Anforderungen der WCAG 2.1 AA vereinbar. Es wurden Anstrengungen unternommen, um eine hohe Zugänglichkeit zu gewährleisten, einschließlich semantischer HTML-Struktur, Tastaturbedienbarkeit, Alternativtexten für Bilder, ausreichenden Farbkontrasten (insbesondere im Hochkontrast-Theme) und der Berücksichtigung von `prefers-reduced-motion`.</p>
-                <p>Die Erstellung dieser Erklärung zur Barrierefreiheit erfolgte am [Aktuelles Datum, z.B. 02. Juni 2025].</p>
-                <p>Die Bewertung erfolgte durch Selbstbewertung unter Zuhilfenahme von Werkzeugen wie dem WAVE Evaluation Tool und den Accessibility Insights for Web (FastPass).</p>
+            <section aria-labelledby="accessibility-status">
+                <h2 id="accessibility-status">Status of Compliance with Requirements</h2>
+                <p>This website is largely compliant with the requirements of WCAG 2.1 AA, according to self-assessment. Efforts have been made to ensure high accessibility, including semantic HTML structure, keyboard operability, alternative texts for images, sufficient color contrasts (especially in the high-contrast theme), and consideration of `prefers-reduced-motion`.</p>
+                <p>This accessibility statement was created on [Current Date, e.g., June 02, 2025].</p>
+                <p>The assessment was carried out by self-assessment with the help of tools such as the WAVE Evaluation Tool and Accessibility Insights for Web (FastPass).</p>
             </section>
 
-            <section aria-labelledby="barrierefreiheit-nicht-barrierefrei">
-                <h2 id="barrierefreiheit-nicht-barrierefrei">Nicht vollständig barrierefreie Inhalte</h2>
-                <p>Trotz unserer Bemühungen können folgende Bereiche Einschränkungen aufweisen:</p>
+            <section aria-labelledby="accessibility-non-accessible">
+                <h2 id="accessibility-non-accessible">Not Fully Accessible Content</h2>
+                <p>Despite our efforts, the following areas may have limitations:</p>
                 <ul>
-                    <li><strong>CSS-Kunst (Seite `css-art.html`):</strong> Das CSS-Kunstwerk ("Creepy Monkey Face") ist primär visueller Natur. Obwohl ein `aria-label` für den Container vorhanden ist, der das Bild beschreibt, ist die komplexe visuelle Darstellung nicht vollständig in Textform abbildbar, ohne den künstlerischen Aspekt der CSS-Demonstration zu verlieren. Gemäß Aufgabenstellung ist diese Seite explizit nicht responsiv gefordert und ihre Barrierefreiheit in Bezug auf die Kunst selbst ist naturgemäß eingeschränkt.</li>
-                    <li><strong>Farbkontraste in spezifischen Theme-Kombinationen:</strong> Obwohl ein Hochkontrast-Theme angeboten wird, könnten in den Standard-Themes (Light/Dark) vereinzelt Elemente existieren, deren Kontrastverhältnis die AA-Anforderungen knapp unterschreitet. Dies wird kontinuierlich überwacht.</li>
-                    <li><strong>Externe Inhalte:</strong> Für Inhalte, die von Dritten eingebunden werden (z.B. Google Fonts, Font Awesome CDN), kann keine vollständige Gewähr für deren Barrierefreiheit übernommen werden, obwohl diese Anbieter in der Regel selbst hohe Standards anlegen.</li>
+                    <li><strong>CSS Art (page `css-art.html`):</strong> The CSS artwork ("Creepy Monkey Face") is primarily visual. Although an `aria-label` is provided for the container describing the image, the complex visual representation cannot be fully conveyed in text form without losing the artistic aspect of the CSS demonstration. According to the assignment, this page is explicitly not required to be responsive, and its accessibility regarding the art itself is inherently limited.</li>
+                    <li><strong>Color Contrasts in Specific Theme Combinations:</strong> Although a high-contrast theme is offered, some elements in the standard themes (Light/Dark) might exist whose contrast ratio narrowly falls short of AA requirements. This is continuously monitored.</li>
+                    <li><strong>External Content:</strong> For content embedded from third parties (e.g., Google Fonts, Font Awesome CDN), complete assurance of their accessibility cannot be guaranteed, although these providers generally adhere to high standards themselves.</li>
                 </ul>
             </section>
             
-            <section aria-labelledby="barrierefreiheit-feedback">
-                <h2 id="barrierefreiheit-feedback">Feedback und Kontaktangaben</h2>
-                <p>Wir sind bestrebt, die Zugänglichkeit dieser Website kontinuierlich zu verbessern. Sollten Ihnen Mängel in Bezug auf die barrierefreie Gestaltung auffallen oder wenn Sie Informationen zu nicht barrierefreien Inhalten benötigen, kontaktieren Sie uns bitte:</p>
+            <section aria-labelledby="accessibility-feedback">
+                <h2 id="accessibility-feedback">Feedback and Contact Information</h2>
+                <p>We are committed to continuously improving the accessibility of this website. If you notice any deficiencies regarding accessible design or if you require information about non-accessible content, please contact us:</p>
                 <address>
-                    Max Mustermann (Boboh)<br>
-                    E-Mail: <a href="mailto:portfolio.boboh@example.com">portfolio.boboh@example.com</a> (Muster)
+                    John Doe (Boboh)<br>
+                    Email: <a href="mailto:portfolio.boboh@example.com">portfolio.boboh@example.com</a> (Sample)
                 </address>
             </section>
 
-            <section aria-labelledby="barrierefreiheit-durchsetzung">
-                <h2 id="barrierefreiheit-durchsetzung">Durchsetzungsverfahren / Schlichtungsverfahren (für öffentliche Stellen in DE)</h2>
-                <p>Sollten Sie der Ansicht sein, dass Sie durch eine nicht ausreichend barrierefreie Gestaltung dieser Website benachteiligt werden, und Ihr Feedback an oben genannten Kontakt keine zufriedenstellende Lösung erbracht hat, können Sie sich an die zuständige Schlichtungsstelle wenden. Für öffentliche Stellen des Bundes ist dies die Schlichtungsstelle nach § 16 BGG beim Beauftragten der Bundesregierung für die Belange von Menschen mit Behinderungen.</p>
-                <p>Weitere Informationen finden Sie unter: <a href="https://www.schlichtungsstelle-bgg.de" target="_blank" rel="noopener noreferrer">www.schlichtungsstelle-bgg.de</a>.</p>
-                <p><small><em>Hinweis: Diese Erklärung zur Barrierefreiheit dient im Rahmen dieses Studentenprojekts der Demonstration.</em></small></p>
+            <section aria-labelledby="accessibility-enforcement">
+                <h2 id="accessibility-enforcement">Enforcement Procedure / Conciliation Procedure (for public bodies in Germany)</h2>
+                <p>If you believe that you are disadvantaged by an insufficiently accessible design of this website, and your feedback to the above contact has not led to a satisfactory solution, you can contact the competent conciliation body. For federal public bodies, this is the conciliation body according to § 16 BGG at the Federal Government Commissioner for Matters relating to Persons with Disabilities.</p>
+                <p>Further information can be found at: <a href="https://www.schlichtungsstelle-bgg.de" target="_blank" rel="noopener noreferrer">www.schlichtungsstelle-bgg.de</a>.</p>
+                <p><small><em>Note: This accessibility statement serves as a demonstration within the scope of this student project.</em></small></p>
             </section>
         </article>
     </main>
 
     <footer class="page-footer" role="contentinfo">
         <div class="footer-content footer-animate">
-            <p>© <span id="current-year"></span> Bobohs Portfolio. Alle Rechte vorbehalten.</p>
-            <nav class="footer-navigation" aria-label="Fußzeilennavigation">
+            <p>© <span id="current-year"></span> Boboh's Portfolio. All rights reserved.</p>
+            <nav class="footer-navigation" aria-label="Footer Navigation">
                 <ul>
-                    <li><a href="impressum.html">Impressum</a></li>
-                    <li><a href="datenschutz.html">Datenschutz</a></li>
-                    <li><a href="barrierefreiheit.html" class="active-footer-nav">Barrierefreiheit</a></li>
+                    <li><a href="impressum.html" class="active-footer-nav">Legal Notice</a></li>
+                    <li><a href="datenschutz.html">Privacy Policy</a></li>
+                    <li><a href="barrierefreiheit.html">Accessibility</a></li>
                 </ul>
             </nav>
         </div>

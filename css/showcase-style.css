@@ -78,13 +78,13 @@ body {
     --border-project-item-hover: rgba(255, 255, 255, 0.4);
 
 
-    --focus-outline-color: #79a6ff;
-    --focus-shadow-color: rgba(121, 166, 255, 0.3);
+    --focus-outline-color: #d5d8de; /* CHANGED from #79a6ff */
+    --focus-shadow-color: rgba(213, 216, 222, 0.3); /* CHANGED from rgba(121, 166, 255, 0.3) */
     --theme-transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
 }
 
 html.light-mode {
-    --bg-overlay-main: rgba(255, 255, 255, 0.55);
+    --bg-overlay-main: rgba(8, 8, 18, 0.65); /* CHANGED from rgba(255, 255, 255, 0.55) */
     --bg-header: rgba(240, 242, 248, 0.85);
     --bg-footer: #e4e9ef;
     --bg-page-content: #f4f6f8;
@@ -115,7 +115,7 @@ html.light-mode {
 }
 
 html.high-contrast-mode {
-    --bg-overlay-main: rgba(0,0,0,0.85);
+    --bg-overlay-main: rgba(8, 8, 18, 0.65); /* CHANGED from rgba(0,0,0,0.85) */
     --bg-header: #000000;
     --bg-footer: #000000;
     --bg-page-content: #000000;
@@ -256,15 +256,12 @@ html.high-contrast-mode .page-header { border-bottom-color: var(--text-accent); 
     transition-property: opacity, transform;
     transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-    /* transition-delay wird von JS per style.transitionDelay gesetzt */
 }
 .media-item.visible,
 .page-footer.visible {
     transition-property: opacity, transform;
     transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-    /* transition-delay wird für .media-item von JS per style.transitionDelay gesetzt,
-       für .page-footer ist sie direkt in der .page-footer Regel unten. */
 }
 
 .visible-reduced-motion {
@@ -455,14 +452,12 @@ html.high-contrast-mode .lightbox-control:focus-visible:not(:disabled) { backgro
     transition-delay: 0s !important;
   }
 
-  /* Nur die Elemente, die normalerweise animiert werden, hier auf visible setzen */
   .gallery-title,
   .media-item,
   .page-footer {
     opacity: 1 !important;
     transform: none !important;
   }
-  /* Header-Elemente sind schon standardmäßig sichtbar */
   .page-header .main-navigation ul li a:hover .link-text-wrapper { transform: none !important; }
   #theme-toggle-button:hover,
   #theme-toggle-button:focus-visible {

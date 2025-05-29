@@ -11,15 +11,15 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background-image: url('https://media.discordapp.net/attachments/1088722976758825001/1367300603285471314/johnrevolt.png?ex=682f1c2b&is=682dcaab&hm=408b5d0ec331b336393f9861a4c5325d26f0747234867ab23317f0095509a25b&=&format=webp&quality=lossless&width=1536&height=864');
+    background-image: url('../img/NYC.png');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     overflow-x: hidden;
     font-size: 16px;
-    padding-top: 70px; /* Adjusted in media queries */
-    background-color: transparent; /* Body itself is transparent to let overlay show */
-    color: var(--text-primary); /* Default text color */
+    padding-top: 70px;
+    background-color: transparent;
+    color: var(--text-primary);
     transition: color 0.4s ease;
     display: flex;
     flex-direction: column;
@@ -32,12 +32,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--bg-overlay-main); /* Themed overlay color */
-    z-index: -2; /* Behind body's content, allowing body's bg image to be further back */
+    background-color: var(--bg-overlay-main);
+    z-index: -2;
     transition: background-color 0.4s ease;
 }
 
-/* Visually hidden class for screen reader only content */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -50,31 +49,30 @@ body {
     border-width: 0;
 }
 
-
 /* --- Focus Indicator --- */
-/* Apply a clear focus indicator to all interactive elements */
-/* Use :focus-visible to only show outlines for keyboard users */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 [tabindex]:not([tabindex="-1"]):focus-visible {
-    outline: 3px solid var(--focus-outline-color, Highlight); /* Fallback to system highlight */
+    outline: 3px solid var(--focus-outline-color, Highlight); 
     outline-offset: 2px;
-    box-shadow: 0 0 0 4px var(--focus-shadow-color, rgba(0,100,255,0.3)); /* Optional: softer outer glow */
+    box-shadow: 0 0 0 4px var(--focus-shadow-color, rgba(0,100,255,0.3)); 
 }
-/* For high-contrast, ensure the outline is very prominent */
 html.high-contrast-mode a:focus-visible,
 html.high-contrast-mode button:focus-visible,
 html.high-contrast-mode input:focus-visible,
 html.high-contrast-mode select:focus-visible,
 html.high-contrast-mode textarea:focus-visible,
 html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
-    outline: 3px solid var(--text-accent); /* Use the accent color for HCM */
+    outline: 3px solid var(--text-accent); 
     outline-offset: 2px;
-    box-shadow: none; /* Often simpler without shadow in HCM */
+    box-shadow: none; 
 }
+
+/* --- About Section Content Wrapper --- */
+/* .about-content-wrapper REGEL ENTFERNT */
 
 
 /* About Section Styles */
@@ -96,15 +94,19 @@ html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
     min-height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: flex-start; 
+    align-items: flex-start; 
     text-align: left;
-    padding-left: 6vw;
+    padding-left: 6vw; /* Ursprüngliches Padding */
     padding-right: 6vw;
-    padding-top: 11vh;
+    padding-top: 11vh; 
     padding-bottom: 45px;
     position: relative;
     z-index: 1;
+    /* Begrenzung der maximalen Breite für bessere Lesbarkeit des Textes */
+    max-width: 1400px; /* Oder einen anderen Wert, der Ihnen passt */
+    /* margin-left: auto; /* Um die Section nach links zu schieben, wenn max-width aktiv ist */
+    /* margin-right: auto; /* Zentriert, wenn Sie das bevorzugen */
 }
 
 .about-heading.animate-on-load {
@@ -192,7 +194,7 @@ html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
 }
 
 @media (max-width: 1024px) {
-    .about-section { padding-top: 9vh; }
+    .about-section { padding-top: 9vh; max-width: 800px; }
     .portfolio-title-text.animate-on-load { font-size: 0.675em; letter-spacing: 4.5px; margin-bottom: 30px; }
     .about-heading.animate-on-load { font-size: 2.625em; margin-bottom: 15px; }
     .about-subtitle.animate-on-load, .about-text.animate-on-load { font-size: 0.825em; letter-spacing: 0.9px; }
@@ -200,7 +202,7 @@ html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
     .cta-button.animate-on-load { font-size: 0.825em; padding: 12px 37.5px; margin-top: 33.75px; border-width: 1.875px;}
 }
 @media (max-width: 768px) {
-    .about-section { padding-top: 9vh; }
+    .about-section { padding-top: 9vh; padding-left: 4vw; padding-right: 4vw; max-width: none; /* Volle Breite auf kleineren Screens */}
     .portfolio-title-text.animate-on-load { font-size: 0.6em; letter-spacing: 3.75px; margin-bottom: 22.5px; }
     .about-heading.animate-on-load { font-size: 2.25em; margin-bottom: 13.5px; }
     .about-subtitle.animate-on-load, .about-text.animate-on-load { font-size: 0.75em; letter-spacing: 0.75px; line-height: 1.8; }
@@ -208,7 +210,7 @@ html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
     .cta-button.animate-on-load { font-size: 0.75em; padding: 10.5px 33.75px; margin-top: 30px; border-width: 1.875px; }
 }
 @media (max-width: 480px) {
-     .about-section { padding-top: 8vh; }
+     .about-section { padding-top: 8vh; padding-left: 3vw; padding-right: 3vw;}
     .portfolio-title-text.animate-on-load { font-size: 0.7em; letter-spacing: 5px; margin-bottom: 25px; }
     .about-heading.animate-on-load { font-size: 2.8em; margin-bottom: 15px; }
     .about-subtitle.animate-on-load, .about-text.animate-on-load { font-size: 0.75em; line-height: 2; letter-spacing: 1px; }
@@ -220,16 +222,16 @@ html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
     --bg-overlay-main: rgba(8, 8, 18, 0.65);
     --bg-primary-content: #0f0f1a;
     --bg-secondary-content: rgba(22, 22, 38, 0.9);
-    --bg-tertiary-content: rgba(30, 30, 55, 0.8);
+    --bg-tertiary-content: rgba(30, 30, 55, 0.8); 
     --bg-header: rgba(12, 12, 22, 0.65);
     --bg-footer: #040408;
 
     --text-primary: #d5d8de;
     --text-secondary: #b0b8c5;
-    --text-accent: #ffffff;
+    --text-accent: #ffffff; 
     --text-about-main: #e0e0e0;
-    --text-card-primary: #d5d8de;
-    --text-card-secondary: #b0b8c5;
+    --text-card-primary: #d5d8de; 
+    --text-card-secondary: #b0b8c5; 
 
     --text-link-nav: #c0c8d0;
     --text-link-nav-hover: #ffffff;
@@ -251,55 +253,57 @@ html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
     --highlight-color: #f0f0f0;
     --commission-status-color: #aaffaa;
 
-    --focus-outline-color: #79a6ff; /* A light blue, good for dark mode */
-    --focus-shadow-color: rgba(121, 166, 255, 0.3);
+    --focus-outline-color: #d5d8de; 
+    --focus-shadow-color: rgba(213, 216, 222, 0.3); 
 
     --theme-transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, opacity 0.35s ease;
 }
 
 html.light-mode {
-    --bg-overlay-main: rgba(255, 255, 255, 0.55); /* Slightly more opaque overlay */
-    --bg-primary-content: #ffffff;
-    --bg-secondary-content: #f8f9fa;
-    --bg-tertiary-content: #e9ecef;
-    --bg-header: rgba(240, 242, 248, 0.85); /* More opaque header */
+    --bg-overlay-main: rgba(8, 8, 18, 0.65); 
+    --bg-primary-content: #ffffff; 
+    --bg-secondary-content: #f8f9fa; 
+    --bg-tertiary-content: #e9ecef; 
+    --bg-header: rgba(240, 242, 248, 0.85); 
     --bg-footer: #e4e9ef;
 
-    /* CORRECTED TEXT COLORS FOR LIGHT MODE - Ensure high contrast against light backgrounds/overlay */
-    --text-primary: #212529;        /* Dark grey for primary text */
-    --text-secondary: #495057;      /* Medium dark grey for secondary text */
-    --text-accent: #0056b3;         /* A strong blue for accents */
-    --text-about-main: #343a40;     /* Dark grey for about text */
+    /* Textfarben für Elemente direkt auf dem dunklen Overlay (z.B. About Section) */
+    --text-primary: #d5d8de;
+    --text-secondary: #b0b8c5;
+    --text-accent: #ffffff; 
+    --text-about-main: #e0e0e0;
+    --highlight-color: #f0f0f0;
+    --commission-status-color: #aaffaa;
+    --focus-outline-color:  #d5d8de; 
+    --focus-shadow-color: rgba(213, 216, 222, 0.3);
 
-    --text-card-primary: #212529;
-    --text-card-secondary: #495057;
+    /* Textfarben und Akzente für helle UI-Komponenten (Header, Karten, Footer, Projektbereich) */
+    --text-on-light-bg: #212529;
+    --text-secondary-on-light-bg: #495057;
+    --accent-on-light-bg: #0056b3; 
+    --link-on-light-bg: #0056b3;
+    --link-hover-on-light-bg: #003875;
+    --focus-outline-on-light-bg: #0056b3; 
+    --focus-shadow-on-light-bg: rgba(0, 86, 179, 0.3);
+    --border-secondary-on-light-bg: #d1d9e0; 
+    --border-theme-button-on-light-bg: #505868;
+    --border-theme-button-hover-on-light-bg: #000000;
 
-    --text-link-nav: #0056b3; /* Use accent blue for nav links */
-    --text-link-nav-hover: #003875; /* Darker blue on hover */
-    --text-link-footer: #343a40;
-    --text-link-footer-hover: #000000;
+    --text-card-primary: var(--text-on-light-bg);
+    --text-card-secondary: var(--text-secondary-on-light-bg);
+    --border-project-item-hover: #6c757d; 
 
-    --text-button-cta: var(--text-primary);
+
+    --text-button-cta: var(--text-primary); 
     --bg-button-cta: transparent;
-    --border-button-cta: var(--text-primary);
-    --text-button-cta-hover: #ffffff; /* White text on hover */
-    --bg-button-cta-hover: var(--text-accent); /* Accent blue background on hover */
-    --border-button-cta-hover: var(--text-accent);
-
-    --border-secondary: #d1d9e0;
-    --border-project-item-hover: #6c757d;
-    --border-theme-button: #505868;
-    --border-theme-button-hover: #000000;
-
-    --highlight-color: #004085; /* Darker blue for highlights */
-    --commission-status-color: #155724; /* Dark green for status */
-
-    --focus-outline-color: #0056b3; /* Use accent blue for focus */
-    --focus-shadow-color: rgba(0, 86, 179, 0.3);
+    --border-button-cta: var(--text-primary); 
+    --text-button-cta-hover: var(--text-on-light-bg); 
+    --bg-button-cta-hover: var(--text-primary); 
+    --border-button-cta-hover: var(--text-primary);
 }
 
 html.high-contrast-mode {
-    --bg-overlay-main: rgba(0,0,0,0.85);
+    --bg-overlay-main: rgba(8, 8, 18, 0.65); 
     --bg-primary-content: #000000;
     --bg-secondary-content: #080808;
     --bg-tertiary-content: #030303;
@@ -308,7 +312,7 @@ html.high-contrast-mode {
 
     --text-primary: #ffffff;
     --text-secondary: #f0f0f0;
-    --text-accent: #ffff00; /* Bright Yellow */
+    --text-accent: #ffff00; 
     --text-about-main: #ffffff;
     --text-card-primary: #ffffff;
     --text-card-secondary: #f0f0f0;
@@ -331,32 +335,93 @@ html.high-contrast-mode {
     --border-theme-button-hover: var(--text-accent);
 
     --highlight-color: var(--text-accent);
-    --commission-status-color: #00ff00; /* Bright Green */
+    --commission-status-color: #00ff00; 
 
-    --focus-outline-color: var(--text-accent); /* Use yellow for focus */
-    --focus-shadow-color: rgba(255, 255, 0, 0.4); /* HCM focus shadow can be yellow */
+    --focus-outline-color: var(--text-accent); 
+    --focus-shadow-color: rgba(255, 255, 0, 0.4); 
 }
 
 .overlay, .page-header, .projects-section, .project-item, .page-footer, #theme-toggle-button,
+/* .about-content-wrapper, entfernt */
 .about-section .portfolio-title-text, .about-section .about-heading, .about-section .about-subtitle, .about-section .about-text,
 .about-section .highlight, .about-section .commission-status {
     transition: var(--theme-transition);
 }
-body { color: var(--text-primary); }
 
-/* Ensure text colors in About section update correctly with themes */
-html.light-mode .about-section .portfolio-title-text.animate-on-load,
-html.light-mode .about-section .about-subtitle.animate-on-load { color: var(--text-secondary); }
-html.light-mode .about-section .about-heading.animate-on-load { color: var(--text-accent); }
-html.light-mode .about-section .about-text.animate-on-load { color: var(--text-about-main); }
+/* --- Light Mode Specific Text and Focus Styling --- */
+html.light-mode body { 
+    color: var(--text-primary); /* Default body text (für About Section) ist hell */
+}
 
+/* Header in Light Mode */
+html.light-mode .page-header { 
+    color: var(--text-on-light-bg); 
+    border-bottom-color: var(--border-secondary-on-light-bg);
+}
+html.light-mode .page-header .main-navigation ul li a { color: var(--link-on-light-bg); }
+html.light-mode .page-header .main-navigation ul li a:hover,
+html.light-mode .page-header .main-navigation ul li a:focus-visible { color: var(--link-hover-on-light-bg); }
+html.light-mode .page-header .main-navigation ul li a::before { background-color: var(--link-hover-on-light-bg); }
+html.light-mode #theme-toggle-button { 
+    color: var(--text-secondary-on-light-bg); 
+    border-color: var(--border-theme-button-on-light-bg); 
+}
+html.light-mode #theme-toggle-button:hover,
+html.light-mode #theme-toggle-button:focus-visible { 
+    color: var(--text-on-light-bg); 
+    border-color: var(--border-theme-button-hover-on-light-bg); 
+    box-shadow: 0 0 8px 2px var(--border-theme-button-hover-on-light-bg);
+}
+html.light-mode .page-header a:focus-visible, 
+html.light-mode .page-header button:focus-visible { 
+    outline-color: var(--focus-outline-on-light-bg);
+    box-shadow: 0 0 0 4px var(--focus-shadow-on-light-bg);
+}
 
-html.high-contrast-mode .about-section .portfolio-title-text.animate-on-load,
-html.high-contrast-mode .about-section .about-subtitle.animate-on-load { color: var(--text-secondary); }
-html.high-contrast-mode .about-section .about-heading.animate-on-load { color: var(--text-accent); }
-html.high-contrast-mode .about-section .about-text.animate-on-load { color: var(--text-about-main); }
+/* Focus für CTA button in about section (direkt auf dunklem Overlay) */
+html.light-mode .about-section .cta-button.animate-on-load:focus-visible {
+     outline-color: var(--focus-outline-color); 
+     box-shadow: 0 0 0 4px var(--focus-shadow-color);
+}
 
+/* Projects Section in Light Mode */
+html.light-mode .projects-section { color: var(--text-on-light-bg); }
+html.light-mode .projects-section h2.section-title-animate { color: var(--accent-on-light-bg); }
+html.light-mode .project-item { 
+    border-color: var(--border-secondary-on-light-bg); 
+}
+html.light-mode .project-item img {
+    border-color: rgba(0,0,0,0.05);
+}
+html.light-mode .project-item h3 { color: var(--accent-on-light-bg); }
+html.light-mode .project-item p { color: var(--text-card-primary); } 
+html.light-mode .project-item figcaption { color: var(--text-card-secondary); }
 
+html.light-mode .project-category-filter { }
+html.light-mode .category-button { color: var(--text-secondary-on-light-bg); }
+html.light-mode .category-button:hover { color: var(--accent-on-light-bg); background-color: #d8dfe6; }
+html.light-mode .category-button.active { background-color: var(--accent-on-light-bg); color: #ffffff; }
+html.light-mode .category-button.active .category-icon { color: #ffffff; }
+html.light-mode .projects-section a:focus-visible, 
+html.light-mode .projects-section button:focus-visible {
+    outline-color: var(--focus-outline-on-light-bg);
+    box-shadow: 0 0 0 4px var(--focus-shadow-on-light-bg);
+}
+
+/* Footer in Light Mode */
+html.light-mode .page-footer { 
+    color: var(--text-secondary-on-light-bg); 
+    border-top-color: var(--border-secondary-on-light-bg);
+}
+html.light-mode .page-footer .footer-navigation ul li a { color: var(--text-on-light-bg); } 
+html.light-mode .page-footer .footer-navigation ul li a:hover,
+html.light-mode .page-footer .footer-navigation ul li a:focus-visible { color: #000000; } 
+html.light-mode .page-footer a:focus-visible {
+    outline-color: var(--focus-outline-on-light-bg);
+    box-shadow: 0 0 0 4px var(--focus-shadow-on-light-bg);
+}
+
+/* General main, header, footer structure */
 main { flex-grow: 1; }
 .page-header {
     background-color: var(--bg-header); padding: 0.7em 3vw;
@@ -382,13 +447,12 @@ html.high-contrast-mode .page-header { border-bottom-color: var(--text-accent); 
     z-index: 0;
 }
 .page-header .main-navigation ul li a:hover::before,
-.page-header .main-navigation ul li a:focus-visible::before { /* Apply to focus-visible as well */
+.page-header .main-navigation ul li a:focus-visible::before {
     transform: scaleX(1);
 }
 .page-header .main-navigation ul li a:hover,
-.page-header .main-navigation ul li a:focus-visible { /* Use focus-visible */
+.page-header .main-navigation ul li a:focus-visible { 
     color: var(--text-link-nav-hover);
-    /* outline: none; REMOVED - General focus style handles this */
 }
 
 .theme-switcher-container { position: relative; }
@@ -399,14 +463,11 @@ html.high-contrast-mode .page-header { border-bottom-color: var(--text-accent); 
     display: flex; position: relative;
 }
 #theme-toggle-button:hover,
-#theme-toggle-button:focus-visible { /* Use focus-visible */
+#theme-toggle-button:focus-visible { 
     color: var(--text-accent); border-color: var(--border-theme-button-hover);
     transform: scale(1.1) rotate(15deg);
     box-shadow: 0 0 8px 2px var(--border-theme-button-hover);
-    /* outline: none; REMOVED - General focus style handles this */
 }
-/* Keep specific HCM focus outline from general rules if needed, or ensure button styles are distinct enough */
-/* html.high-contrast-mode #theme-toggle-button:focus-visible { outline: 2px solid var(--text-accent); } */
 
 #theme-toggle-button .icon-wrapper { display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; position: relative; }
 #theme-toggle-button .theme-icon { position: absolute; font-size: 0.9em; opacity: 0; transform: translateY(100%) scale(0.5); transition: opacity 0.3s ease-out, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
@@ -415,11 +476,10 @@ html.high-contrast-mode .page-header { border-bottom-color: var(--text-accent); 
 .projects-section {
     padding: 60px 6vw;
     background-color: var(--bg-primary-content);
-    color: var(--text-primary);
 }
 .projects-section .section-container { max-width: 1200px; margin: 0 auto; }
 .projects-section h2.section-title-animate {
-    font-family: 'Dela Gothic One', cursive; font-size: 2.6em; color: var(--text-accent);
+    font-family: 'Dela Gothic One', cursive; font-size: 2.6em; color: var(--text-accent); 
     text-align: center; margin-bottom: 50px;
     opacity: 0; transform: translateY(30px) scale(0.95);
     transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), color 0.35s ease;
@@ -447,15 +507,14 @@ html.high-contrast-mode .page-header { border-bottom-color: var(--text-accent); 
     border: 1px solid var(--border-secondary);
     transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), border-color 0.35s ease;
 }
-html.dark-mode .project-item img { border-color: rgba(255,255,255,0.05); }
-html.light-mode .project-item img { border-color: rgba(0,0,0,0.05); }
 .project-item:hover img { transform: scale(1.1); }
 .project-item figcaption { font-size: 0.75em; text-align: center; font-style: italic; color: var(--text-card-secondary); opacity: 0.8; }
-.project-item h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.25em; color: var(--text-accent); margin-bottom: 10px; } /* text-accent will be different per theme */
+.project-item h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.25em; color: var(--text-accent); margin-bottom: 10px; } 
 .project-item p { font-family: 'Inter', sans-serif; font-size: 0.95em; line-height: 1.6; flex-grow: 1; color: var(--text-card-primary); }
 
 .page-footer {
-    background-color: var(--bg-footer); color: var(--text-secondary); padding: 30px 5vw;
+    background-color: var(--bg-footer); 
+    padding: 30px 5vw;
     text-align: center; font-size: 0.8em; margin-top: auto;
     border-top: 1px solid var(--border-secondary);
 }
@@ -467,9 +526,8 @@ html.high-contrast-mode .page-footer { border-top-color: var(--text-accent); }
 .page-footer .footer-navigation ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 20px; }
 .page-footer .footer-navigation ul li a { color: var(--text-link-footer); text-decoration: none; transition: color 0.2s ease; }
 .page-footer .footer-navigation ul li a:hover,
-.page-footer .footer-navigation ul li a:focus-visible { /* Use focus-visible */
+.page-footer .footer-navigation ul li a:focus-visible { 
     color: var(--text-link-footer-hover); text-decoration: underline;
-    /* outline: none; REMOVED */
 }
 
 @media (max-width: 768px) {
@@ -492,7 +550,6 @@ html.high-contrast-mode .page-footer { border-top-color: var(--text-accent); }
     .project-grid { gap: 20px; }
 }
 
-/* --- prefers-reduced-motion --- */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -506,7 +563,6 @@ html.high-contrast-mode .page-footer { border-top-color: var(--text-accent); }
     transition-delay: 0s !important;
   }
 
-  /* Reset specific transforms and opacities if they are part of initial animation state */
   .animate-on-load,
   .project-animate,
   .footer-animate,
@@ -516,7 +572,6 @@ html.high-contrast-mode .page-footer { border-top-color: var(--text-accent); }
     transform: none !important;
   }
 
-  /* Ensure elements that rely on .visible class for animation end state are immediately visible */
   .section-title-animate.visible,
   .project-item.project-animate.visible,
   .footer-content.footer-animate.visible {
@@ -528,17 +583,17 @@ html.high-contrast-mode .page-footer { border-top-color: var(--text-accent); }
     transform: none !important;
   }
   .page-header .main-navigation ul li a::before {
-    transform: scaleX(0) !important; /* Keep hover effect minimal or non-existent if preferred */
+    transform: scaleX(0) !important; 
   }
    .page-header .main-navigation ul li a:hover::before,
    .page-header .main-navigation ul li a:focus-visible::before {
-       transform: scaleX(1) !important; /* Still show underline on hover/focus if it's primary feedback */
+       transform: scaleX(1) !important; 
    }
 
   #theme-toggle-button:hover,
   #theme-toggle-button:focus-visible {
-    transform: none !important; /* Remove rotation/scale on hover/focus */
-    box-shadow: 0 0 8px 2px var(--border-theme-button-hover); /* Keep shadow if it indicates focus */
+    transform: none !important; 
+    box-shadow: 0 0 8px 2px var(--border-theme-button-hover); 
   }
 
   .project-item:hover {
@@ -555,7 +610,6 @@ html.high-contrast-mode .page-footer { border-top-color: var(--text-accent); }
     animation: none !important;
     transition: none !important;
 }
-/* style.css additions */
 
 /* --- Project Category Filter (Segmented Control) Styles --- */
 .project-category-filter {
@@ -563,127 +617,260 @@ html.high-contrast-mode .page-footer { border-top-color: var(--text-accent); }
     justify-content: center;
     align-items: center;
     margin-bottom: 40px;
-    background-color: var(--bg-tertiary-content); /* Background for the whole control */
-    border-radius: 8px; /* Rounded corners for the container */
-    padding: 5px; /* Padding around the buttons */
+    background-color: var(--bg-tertiary-content); 
+    border-radius: 8px; 
+    padding: 5px; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-    gap: 5px; /* Gap between buttons when wrapped */
+    flex-wrap: wrap; 
+    gap: 5px; 
 }
 
 .category-button {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 0.9em;
-    padding: 10px 20px; /* Padding inside buttons */
-    border: none; /* Remove default border */
-    background-color: transparent; /* Transparent background by default */
-    color: var(--text-secondary);
+    padding: 10px 20px; 
+    border: none; 
+    background-color: transparent; 
+    color: var(--text-secondary); 
     cursor: pointer;
-    border-radius: 6px; /* Rounded corners for individual buttons */
+    border-radius: 6px; 
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
     display: flex;
     align-items: center;
-    gap: 8px; /* Space between icon and text */
-    flex-grow: 1; /* Allow buttons to grow to fill space if fewer items */
-    flex-basis: auto; /* Default basis */
+    gap: 8px; 
+    flex-grow: 1; 
+    flex-basis: auto; 
     text-align: center;
     justify-content: center;
 }
 
 .category-button .category-icon {
-    font-size: 1.1em; /* Slightly larger icon */
-    line-height: 1; /* Ensure icon aligns well */
+    font-size: 1.1em; 
+    line-height: 1; 
 }
 
 .category-button:hover {
-    color: var(--text-accent);
-    background-color: rgba(255,255,255,0.05); /* Subtle hover for dark mode */
+    color: var(--text-accent); 
+    background-color: rgba(255,255,255,0.05); 
 }
 
 .category-button.active {
-    background-color: var(--text-accent); /* Active button background is accent color */
-    color: var(--bg-primary-content); /* Text color contrasts with accent background */
+    background-color: var(--text-accent); 
+    color: var(--bg-primary-content); 
     font-weight: 700;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Slight shadow for active button */
-    transform: translateY(-1px); /* Slight lift for active button */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
+    transform: translateY(-1px); 
 }
 .category-button.active .category-icon {
-    color: var(--bg-primary-content); /* Icon color matches text on active button */
+    color: var(--bg-primary-content); 
 }
 
-
-/* Light Mode Specifics for Segmented Control */
-html.light-mode .project-category-filter {
-    background-color: #e9ecef; /* Lighter background for container */
-}
-html.light-mode .category-button {
-    color: var(--text-secondary); /* Darker text for light mode */
-}
-html.light-mode .category-button:hover {
-    color: var(--text-accent); /* Accent color on hover */
-    background-color: #d8dfe6; /* Subtle hover background */
-}
-html.light-mode .category-button.active {
-    background-color: var(--text-accent); /* Accent background */
-    color: #ffffff; /* White text on accent background */
-}
-html.light-mode .category-button.active .category-icon {
-    color: #ffffff;
-}
-
-/* High Contrast Mode Specifics for Segmented Control */
 html.high-contrast-mode .project-category-filter {
     background-color: #000000;
-    border: 1px solid var(--text-accent); /* Border for container */
+    border: 1px solid var(--text-accent); 
 }
 html.high-contrast-mode .category-button {
     color: var(--text-primary);
-    border: 1px solid transparent; /* Prepare for focus border */
+    border: 1px solid transparent; 
 }
 html.high-contrast-mode .category-button:hover {
     color: var(--text-accent);
-    background-color: #1a1a1a; /* Slight hover background */
+    background-color: #1a1a1a; 
     border-color: var(--text-accent);
 }
 html.high-contrast-mode .category-button.active {
     background-color: var(--text-accent);
-    color: #000000; /* Black text on accent background */
+    color: #000000; 
     border-color: var(--text-accent);
     font-weight: bold;
 }
 html.high-contrast-mode .category-button.active .category-icon {
     color: #000000;
 }
-/* Ensure focus-visible on category buttons is distinct */
-.category-button:focus-visible {
-    outline: 3px solid var(--focus-outline-color, Highlight);
-    outline-offset: 1px; /* Adjusted offset */
-    /* No need for box-shadow here if outline is strong */
+.category-button:focus-visible { 
+    outline: 3px solid var(--focus-outline-color);
+    outline-offset: 1px; 
 }
 html.high-contrast-mode .category-button:focus-visible {
-    outline-color: var(--text-accent); /* Use accent for HCM focus */
+    outline-color: var(--text-accent); 
 }
 
 
-/* Project Item Styling when hidden by filter */
 .project-item-hidden {
-    display: none !important; /* Force hide, can also use 'visibility: hidden; opacity: 0; height: 0; margin: 0; padding: 0;' for smoother transitions if desired with JS */
+    display: none !important; 
 }
-
-/* The .sr-only class should already be in your style.css */
-/* #project-filter-status is .sr-only */
 
 @media (max-width: 768px) {
     .project-category-filter {
-        flex-direction: column; /* Stack buttons vertically on smaller screens */
-        align-items: stretch; /* Make buttons take full width */
+        flex-direction: column; 
+        align-items: stretch; 
     }
     .category-button {
-        flex-grow: 0; /* Don't grow when stacked */
-        margin-bottom: 5px; /* Add margin between stacked buttons */
+        flex-grow: 0; 
+        margin-bottom: 5px; 
     }
     .category-button:last-child {
         margin-bottom: 0;
     }
 }
+
+/* --- Bestehende Animationsdefinition (sollte schon da sein) --- */
+@keyframes fadeInUpAnimation {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fadeInUp-active {
+    animation-name: fadeInUpAnimation;
+    animation-duration: 0.8s; /* Oder deine bevorzugte Dauer */
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* --- Initialer Zustand für Elemente, die animiert werden sollen --- */
+.animate-on-load,
+.project-animate, /* Für Projekt-Items, die per JS .fadeInUp-active bekommen */
+.animate-project-stats, /* Für die neuen Statistik-Elemente */
+.section-title-animate, /* Für die Projektüberschrift */
+.footer-animate { /* Für den Footer */
+    opacity: 0;
+    transform: translateY(20px); /* Einheitlicher Start für fadeInUp */
+}
+
+/* --- Styles für die Statistik-Container-Variante in der Projekt-Sektion --- */
+.extended-stats-container.project-stats-variant {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    width: 100%;
+    flex-wrap: wrap;
+    /* opacity und transform werden von .animate-project-stats und .fadeInUp-active gesteuert */
+}
+
+.extended-stats-container.project-stats-variant .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* opacity und transform werden von .animate-project-stats und .fadeInUp-active gesteuert */
+}
+
+.extended-stats-container.project-stats-variant .stat-number {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 2.8em;
+    font-weight: normal;
+    color: var(--text-accent); /* Wird für Light Mode überschrieben */
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.extended-stats-container.project-stats-variant .stat-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
+    color: var(--text-secondary); /* Wird für Light Mode überschrieben */
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    max-width: 180px;
+}
+
+/* Farbliche Anpassung der Stats für die Projekt-Sektion im Light-Mode */
+html.light-mode .extended-stats-container.project-stats-variant .stat-number {
+    color: var(--accent-on-light-bg);
+}
+html.light-mode .extended-stats-container.project-stats-variant .stat-description {
+    color: var(--text-secondary-on-light-bg);
+}
+
+/* High Contrast Mode bleibt konsistent */
+html.high-contrast-mode .extended-stats-container.project-stats-variant .stat-number {
+    color: var(--text-accent);
+}
+html.high-contrast-mode .extended-stats-container.project-stats-variant .stat-description {
+    color: var(--text-secondary);
+}
+
+
+/* --- Responsive Anpassungen für die Extended Stats in der Projekt-Sektion --- */
+@media (max-width: 768px) {
+    .extended-stats-container.project-stats-variant {
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    .extended-stats-container.project-stats-variant .stat-number {
+        font-size: 2.4em;
+    }
+    .extended-stats-container.project-stats-variant .stat-description {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 520px) {
+    .extended-stats-container.project-stats-variant {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 25px;
+    }
+     .extended-stats-container.project-stats-variant .stat-item {
+        min-width: auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    .extended-stats-container.project-stats-variant .stat-number {
+        font-size: 2.2em;
+    }
+}
+
+/* --- Anpassung für .project-animate (Projekt-Items) --- */
+/* Die Klasse .project-animate dient jetzt nur noch als Selektor für JS,
+   der initiale Zustand wird durch die obige .project-animate Regel gesetzt.
+   Die Animation wird durch .fadeInUp-active getriggert.
+   Die spezifische Regel für .project-item.project-animate kann vereinfacht werden,
+   da der initiale Zustand jetzt generischer ist.
+*/
+.project-item.project-animate {
+    background-color: var(--bg-tertiary-content);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-secondary);
+    /* opacity und transform kommen von der globalen .project-animate Regel */
+    transition: transform 0.3s ease, /* Nur Hover-Effekt Transition hier */
+                box-shadow 0.3s ease-out,
+                background-color 0.35s ease,
+                color 0.35s ease,
+                border-color 0.35s ease;
+    /* Die Animations-Transition (opacity, transform) wird von .fadeInUp-active übernommen */
+}
+/* Die .project-item.project-animate.visible Regel wird nicht mehr benötigt,
+   da .fadeInUp-active die Animation steuert. */
+
+/* Stelle sicher, dass section-title-animate auch den initialen Zustand hat */
+.projects-section h2.section-title-animate {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 2.6em;
+    color: var(--text-accent);
+    text-align: center;
+    margin-bottom: 50px;
+    /* opacity und transform vom globalen .section-title-animate oben */
+    /* Die Transition hier ist für die Farbänderung beim Theme-Wechsel, nicht für die Einblendanimation */
+    transition: color 0.35s ease;
+    /* Die Einblendanimation wird durch .fadeInUp-active gesteuert */
+}
+/* Die .projects-section h2.section-title-animate.visible Regel ist nicht mehr nötig,
+   da .fadeInUp-active die Animation übernimmt. */
+
+/* Ähnlich für footer-animate */
+.footer-content.footer-animate {
+    /* opacity und transform vom globalen .footer-animate oben */
+    /* Transition für Farbanpassungen etc. */
+    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+    /* Einblendanimation durch .fadeInUp-active */
+}
+/* .footer-content.footer-animate.visible nicht mehr nötig */

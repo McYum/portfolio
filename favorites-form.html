@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="dark-mode"> <!-- Sprache auf Deutsch, Fallback HTML class -->
+<html lang="en" class="dark-mode"> <!-- Sprache auf Deutsch, Fallback HTML class -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,8 +38,8 @@
         /* Specific styles for the form page content within the main layout */
         .form-page-main {
             padding: 40px 6vw;
-            background-color: var(--bg-primary-content);
-            color: var(--text-primary);
+            background-color: var(--bg-primary-content); /* Dark in DarkMode, White in LightMode */
+            color: var(--text-primary); /* Light in DarkMode, Light in LightMode (Problem for text directly on form-page-main) */
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -47,41 +47,45 @@
         }
         .form-container {
             max-width: 700px; width: 100%; margin: 20px 0; padding: 30px;
-            background-color: var(--bg-secondary-content);
+            background-color: var(--bg-secondary-content); /* Dark in DarkMode, Light in LightMode */
             border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border: 1px solid var(--border-secondary); color: var(--text-card-primary);
+            border: 1px solid var(--border-secondary);
+            color: var(--text-card-primary); /* Light in DarkMode, Dark in LightMode (from style.css specific for cards) */
         }
         .form-container h1 {
             text-align: center; margin-bottom: 25px; font-family: 'Dela Gothic One', cursive;
-            font-size: 2em; color: var(--text-accent);
+            font-size: 2em; color: var(--text-accent); /* White in DarkMode, White in LightMode (Problem) */
         }
         .form-container fieldset {
             border: 1px solid var(--border-secondary); padding: 20px;
             margin-bottom: 20px; border-radius: 4px;
         }
         .form-container legend {
-            font-weight: 700; padding: 0 10px; color: var(--text-accent);
+            font-weight: 700; padding: 0 10px; color: var(--text-accent); /* White in DarkMode, White in LightMode (Problem) */
             font-family: 'Inter', sans-serif;
         }
         .form-container label {
-            display: block; margin-bottom: 8px; color: var(--text-card-secondary);
+            display: block; margin-bottom: 8px; color: var(--text-card-secondary); /* Light Grey in DarkMode, Med Dark Grey in LightMode */
             font-weight: 500;
         }
         .form-container input[type="text"], .form-container select {
             width: 100%; padding: 12px; margin-bottom: 15px;
             border: 1px solid var(--border-secondary); border-radius: 4px; box-sizing: border-box;
-            background-color: var(--bg-tertiary-content); color: var(--text-primary);
+            background-color: var(--bg-tertiary-content); /* Dark in DarkMode, Light in LightMode */
+            color: var(--text-primary); /* Light in DarkMode, Light in LightMode (PROBLEM) */
             font-family: 'Inter', sans-serif; font-size: 0.95em;
         }
         .form-container input[type="text"]:focus, .form-container select:focus {
-            border-color: var(--text-accent); box-shadow: 0 0 0 2px var(--focus-shadow-color);
+            border-color: var(--text-accent); /* White/Blue based on mode */
+            box-shadow: 0 0 0 2px var(--focus-shadow-color); /* Grey/Blue based on mode */
         }
         .form-container .radio-group label, .form-container .checkbox-group label {
             display: inline-flex; align-items: center; margin-right: 20px;
-            font-weight: normal; color: var(--text-card-primary); cursor: pointer;
+            font-weight: normal; color: var(--text-card-primary); /* Light in DarkMode, Dark in LightMode */
+            cursor: pointer;
         }
         .form-container input[type="radio"], .form-container input[type="checkbox"] {
-            margin-right: 8px; accent-color: var(--text-accent);
+            margin-right: 8px; accent-color: var(--text-accent); /* White in DarkMode, White in LightMode (Problem) */
             width: 1.1em; height: 1.1em;
         }
         .form-container input[type="radio"]:disabled + label,
@@ -89,18 +93,103 @@
             color: var(--text-secondary); cursor: not-allowed; opacity: 0.7;
         }
         .form-container button[type="submit"] {
-            background-color: var(--text-accent); color: var(--bg-primary-content);
+            background-color: var(--text-accent); /* White in DarkMode, White in LightMode (Problem) */
+            color: var(--bg-primary-content); /* Dark blue in DarkMode, White in LightMode (Problem) */
             padding: 12px 25px; border: none; border-radius: 4px; cursor: pointer;
             font-size: 1em; font-weight: 700; font-family: 'Inter', sans-serif;
             transition: background-color 0.3s ease, transform 0.2s ease;
             display: block; margin: 20px auto 0;
         }
         .form-container button[type="submit"]:hover {
-            background-color: var(--highlight-color); transform: translateY(-2px);
+            background-color: var(--highlight-color); /* Light grey in DarkMode, Light grey in LightMode */
+            transform: translateY(-2px);
         }
-        html.light-mode .form-container button[type="submit"] { color: #fff; }
-        html.high-contrast-mode .form-container button[type="submit"] { color: #000; }
+        /* Original Light Mode override for button text - keep it for now, might adjust bg too */
+        /* html.light-mode .form-container button[type="submit"] { color: #fff; } */
+
         .form-message { margin-top: 5px; font-size: 0.9em; color: var(--text-secondary); }
+
+
+        /* --- LIGHT MODE OVERRIDES FOR FORM ELEMENTS --- */
+        html.light-mode .form-page-main {
+            color: var(--text-on-light-bg); /* Text directly on form-page-main should be dark */
+        }
+        html.light-mode .form-container {
+            color: var(--text-on-light-bg); /* Default text color for form container */
+            border-color: var(--border-secondary-on-light-bg);
+        }
+        html.light-mode .form-container h1 {
+            color: var(--accent-on-light-bg); /* e.g., Blue heading */
+        }
+        html.light-mode .form-container fieldset {
+            border-color: var(--border-secondary-on-light-bg);
+        }
+        html.light-mode .form-container legend {
+            color: var(--accent-on-light-bg); /* e.g., Blue legend */
+        }
+        html.light-mode .form-container label { /* General labels */
+            color: var(--text-secondary-on-light-bg);
+        }
+        html.light-mode .form-container input[type="text"], 
+        html.light-mode .form-container select {
+            border-color: var(--border-secondary-on-light-bg);
+            color: var(--text-on-light-bg); /* Dark text for input */
+            background-color: #fff; /* Ensure input fields are distinctly light */
+        }
+        html.light-mode .form-container input[type="text"]::placeholder,
+        html.light-mode .form-container select::placeholder { /* Assuming select can have placeholder via JS */
+            color: var(--text-secondary-on-light-bg);
+            opacity: 0.7;
+        }
+        html.light-mode .form-container input[type="text"]:focus, 
+        html.light-mode .form-container select:focus {
+            border-color: var(--accent-on-light-bg); 
+            box-shadow: 0 0 0 2px var(--focus-shadow-on-light-bg);
+        }
+        html.light-mode .form-container .radio-group label, 
+        html.light-mode .form-container .checkbox-group label {
+            color: var(--text-on-light-bg); /* Dark text for radio/checkbox labels */
+        }
+        html.light-mode .form-container input[type="radio"], 
+        html.light-mode .form-container input[type="checkbox"] {
+            accent-color: var(--accent-on-light-bg); /* e.g., Blue checkmark/radio dot */
+        }
+        html.light-mode .form-container input[type="radio"]:disabled + label,
+        html.light-mode .form-container input[type="checkbox"]:disabled + label {
+            color: var(--text-secondary-on-light-bg); 
+        }
+
+        html.light-mode .form-container button[type="submit"] {
+            background-color: var(--accent-on-light-bg); /* e.g., Blue button */
+            color: #ffffff; /* White text on blue button */
+        }
+        html.light-mode .form-container button[type="submit"]:hover {
+            background-color: var(--link-hover-on-light-bg); /* Darker blue on hover */
+        }
+        html.light-mode .form-message {
+            color: var(--text-secondary-on-light-bg);
+        }
+
+        /* High Contrast mode adjustments for form */
+        html.high-contrast-mode .form-container input[type="text"], 
+        html.high-contrast-mode .form-container select {
+             background-color: var(--bg-primary-content); /* Black background for inputs */
+             border-color: var(--text-accent); /* Yellow border */
+             color: var(--text-primary); /* White text */
+        }
+        html.high-contrast-mode .form-container input[type="text"]:focus, 
+        html.high-contrast-mode .form-container select:focus {
+            border-color: var(--text-accent); 
+            box-shadow: 0 0 0 2px var(--text-accent);
+        }
+        html.high-contrast-mode .form-container button[type="submit"] { 
+            color: #000; /* Ensure text color for button is black on yellow */
+            border: 1px solid #000; /* Add border for more definition */
+        }
+        html.high-contrast-mode .form-container button[type="submit"]:hover {
+            background-color: #ffff66; /* Slightly lighter yellow */
+        }
+
     </style>
 </head>
 <body>
@@ -109,10 +198,10 @@
     <header class="page-header" role="banner">
         <nav class="main-navigation" aria-label="Main navigation">
             <ul>
-                <li><a href="index.html#about"><span class="link-text-wrapper">Über Mich</span></a></li>
-                <li><a href="index.html#projects"><span class="link-text-wrapper">Projekte</span></a></li>
-                <li><a href="css-art.html"><span class="link-text-wrapper">CSS Tier Kunst</span></a></li>
-                <li><a href="favorites-form.html" class="active-main-nav"><span class="link-text-wrapper">Favoriten Formular</span></a></li>
+                <li><a href="index.html#about"><span class="link-text-wrapper">ABOUT ME</span></a></li>
+                <li><a href="index.html#projects"><span class="link-text-wrapper">PROJECTS</span></a></li>
+                <li><a href="css-art.html"><span class="link-text-wrapper">CSS ART</span></a></li>
+                <li><a href="favorites-form.html" class="active-main-nav"><span class="link-text-wrapper">FAVORITES FORM</span></a></li>
             </ul>
         </nav>
         <div class="theme-switcher-container">
@@ -133,7 +222,7 @@
                 <fieldset>
                     <legend>Lieblingsfilm</legend> <!-- Übersetzt -->
                     <label for="movie-name">Filmtitel:</label> <!-- Übersetzt -->
-                    <input type="text" id="movie-name" name="movie_name" required>
+                    <input type="text" id="movie-name" name="movie_name" required placeholder="z.B. Interstellar">
                 </fieldset>
 
                 <fieldset aria-describedby="dishes-hint dishes-limit-message">
@@ -188,9 +277,9 @@
             <p>© <span id="current-year"></span> Boboh's Portfolio. Alle Rechte vorbehalten.</p>
             <nav class="footer-navigation" aria-label="Footer navigation">
                 <ul>
-                    <li><a href="impressum.html">Impressum</a></li>
-                    <li><a href="datenschutz.html">Datenschutz</a></li>
-                    <li><a href="barrierefreiheit.html">Barrierefreiheit</a></li>
+					<li><a href="impressum.html" class="active-footer-nav">Legal Notice</a></li>
+                    <li><a href="datenschutz.html">Privacy Policy</a></li>
+                    <li><a href="barrierefreiheit.html">Accessibility</a></li>
                 </ul>
             </nav>
         </div>
@@ -207,15 +296,21 @@
                                           htmlEl.classList.contains('light-mode') ? 'light-mode' :
                                           'high-contrast-mode');
             if (currentThemeIndex === -1) {
-                currentThemeIndex = 1; // Default to light-mode for forms if something went wrong
-                htmlEl.classList.add(themes[currentThemeIndex]);
+                // Determine a sensible default based on the HTML class or fall back.
+                // The anti-flashbang script already tries to set a class.
+                // If no class is set after that, default to dark-mode (index 0) or light-mode (index 1)
+                currentThemeIndex = themes.indexOf('dark-mode'); // Or 1 for light-mode
+                if (!htmlEl.classList.contains(themes[currentThemeIndex])) {
+                     htmlEl.classList.add(themes[currentThemeIndex]);
+                }
             }
+
 
             function applyTheme(themeIndex, isInitialLoad = false) {
                 const previousThemeClass = themes[currentThemeIndex];
-                if (previousThemeClass !== themes[themeIndex]) {
-                    htmlEl.classList.remove(previousThemeClass);
-                    htmlEl.classList.add(themes[themeIndex]);
+                if (previousThemeClass !== themes[themeIndex] || isInitialLoad) { // Ensure correct class on initial load too
+                    htmlEl.classList.remove(previousThemeClass); // Remove old one
+                    htmlEl.classList.add(themes[themeIndex]);    // Add new one
                 }
                 currentThemeIndex = themeIndex;
 
@@ -228,7 +323,7 @@
                     localStorage.setItem('portfolioThemeIndex', themeIndex);
                 }
             }
-            applyTheme(currentThemeIndex, true);
+            applyTheme(currentThemeIndex, true); // Apply determined theme
 
             if(themeToggleButton) {
                 themeToggleButton.addEventListener('click', () => {
