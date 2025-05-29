@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="de" class="dark-mode"> <!-- Default theme in HTML -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase - [Project Title]</title>
+    <meta name="description" content="Visual showcase of [Project Title].">
+
+    <script>
+        // Anti-Flashbang Script
+        (function() {
+            const themes = ['dark-mode', 'light-mode', 'high-contrast-mode'];
+            let pageDefaultTheme = 'light-mode';
+            if (document.documentElement.classList.contains('dark-mode')) {
+                pageDefaultTheme = 'dark-mode';
+            } else if (document.documentElement.classList.contains('high-contrast-mode')) {
+                pageDefaultTheme = 'high-contrast-mode';
+            }
+            let currentThemeClass = pageDefaultTheme;
+            try {
+                const savedThemeIndex = localStorage.getItem('portfolioThemeIndex');
+                if (savedThemeIndex !== null) {
+                    const themeIndex = parseInt(savedThemeIndex, 10);
+                    if (themeIndex >= 0 && themeIndex < themes.length) {
+                        currentThemeClass = themes[themeIndex];
+                    }
+                }
+            } catch (e) { /* console.warn('Could not access localStorage for theme.', e); */ }
+            themes.forEach(theme => document.documentElement.classList.remove(theme));
+            document.documentElement.classList.add(currentThemeClass);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/showcase-style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Dela+Gothic+One&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <header class="page-header" role="banner">
+        <nav class="main-navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html?category=all#projects"><span class="link-text-wrapper">ALL</span></a></li>
+                <li><a href="index.html?category=2d#projects" class="active-main-nav"><span class="link-text-wrapper">2D ART</span></a></li>
+                <li><a href="index.html?category=3d#projects"><span class="link-text-wrapper">3D ART</span></a></li>
+                <li><a href="index.html?category=calligraphy#projects"><span class="link-text-wrapper">CALLIGRAPHY</span></a></li>
+                <li><a href="index.html?category=figures#projects"><span class="link-text-wrapper">FIGURES</span></a></li>
+                <li><a href="index.html#about"><span class="link-text-wrapper">About Me</span></a></li>
+            </ul>
+        </nav>
+        <div class="theme-switcher-container">
+            <button id="theme-toggle-button" aria-label="Toggle theme" title="Toggle theme">
+                <span class="icon-wrapper">
+                    <i class="fas fa-sun light-icon theme-icon" aria-hidden="true"></i>
+                    <i class="fas fa-moon dark-icon theme-icon" aria-hidden="true"></i>
+                    <i class="fas fa-adjust contrast-icon theme-icon" aria-hidden="true"></i>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <main role="main" class="gallery-main">
+        <h1 class="gallery-title">[Project Title] Media Gallery</h1>
+        
+        <div class="media-grid">
+            <figure class="media-item">
+                <a href="https://cdn.discordapp.com/attachments/1088722976758825001/1373423211529900062/haffhafhafahfahhaf.png?ex=68304a4a&is=682ef8ca&hm=d341a9c52eefec4f9397e7cdff7938e978142ce67a17f6ada85c5a74c631e6a2&" class="lightbox-trigger" aria-label="View Detailed dragon sketch, side profile." data-caption="Detailed dragon sketch, side profile. Hand-drawn with intricate scales.">
+                    <img src="https://cdn.discordapp.com/attachments/1088722976758825001/1373423211529900062/haffhafhafahfahhaf.png?ex=68304a4a&is=682ef8ca&hm=d341a9c52eefec4f9397e7cdff7938e978142ce67a17f6ada85c5a74c631e6a2&" alt="Detailed dragon sketch, side profile.">
+                </a>
+            </figure>
+
+            <figure class="media-item">
+                 <a href="https://cdn.discordapp.com/attachments/1088722976758825001/1373423212045537430/ahahfhfashafhaf.png?ex=68304a4a&is=682ef8ca&hm=e16cd106b1ed6e68527d6f6dd70935259b3378020bde170a867c4a29bab7adbb&" class="lightbox-trigger" aria-label="View Circular dragon illustration, traditional style." data-caption="Circular dragon illustration inspired by traditional Asian art.">
+                    <img src="https://cdn.discordapp.com/attachments/1088722976758825001/1373423212045537430/ahahfhfashafhaf.png?ex=68304a4a&is=682ef8ca&hm=e16cd106b1ed6e68527d6f6dd70935259b3378020bde170a867c4a29bab7adbb&" alt="Circular dragon illustration, traditional style.">
+                </a>
+            </figure>
+            
+            <figure class="media-item media-item-video">
+                <video controls preload="metadata" poster="https://via.placeholder.com/400x300/ccc/666?text=Video+Poster">
+                    <source src="path/to/your/video.mp4" type="video/mp4">
+                    <track label="English" kind="subtitles" srclang="en" src="path/to/captions.vtt">
+                    Your browser does not support the video tag. <a href="path/to/your/video.mp4">Download video</a>.
+                </video>
+            </figure>
+
+            <figure class="media-item">
+                 <a href="https://via.placeholder.com/1200x900/ddd/777?text=Project+Image+3+Full" class="lightbox-trigger" aria-label="View Placeholder image 3 for the project." data-caption="This is the third placeholder image.">
+                    <img src="https://via.placeholder.com/400x300/ddd/777?text=Project+Image+3" alt="Placeholder image 3 for the project.">
+                </a>
+            </figure>
+            <figure class="media-item">
+                 <a href="https://via.placeholder.com/1200x900/eee/888?text=Project+Image+4+Full" class="lightbox-trigger" aria-label="View Placeholder image 4 for the project." data-caption="Another placeholder, showcasing different dimensions.">
+                    <img src="https://via.placeholder.com/400x300/eee/888?text=Project+Image+4" alt="Placeholder image 4 for the project.">
+                </a>
+            </figure>
+        </div>
+    </main>
+
+    <footer class="page-footer" role="contentinfo">
+        <div class="footer-content">
+            <p>© <span id="current-year"></span> Boboh's Portfolio. All rights reserved.</p>
+            <nav class="footer-navigation" aria-label="Footer navigation">
+                <ul>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                    <li><a href="barrierefreiheit.html">Barrierefreiheit</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <div id="imageLightbox" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightboxCaptionText">
+        <button id="lightboxClose" class="lightbox-control lightbox-close" aria-label="Close image viewer"><i class="fas fa-times" aria-hidden="true"></i></button>
+        <button id="lightboxPrev" class="lightbox-control lightbox-prev" aria-label="Previous image">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="lightbox-content-wrapper">
+            <figure class="lightbox-figure">
+                <img src="" alt="" id="lightboxImage" />
+            </figure>
+            <figcaption id="lightboxCaption" class="lightbox-caption">
+                <p id="lightboxCaptionText"></p>
+                <p id="lightboxCounter" class="lightbox-counter" aria-live="polite"></p>
+            </figcaption>
+        </div>
+        <button id="lightboxNext" class="lightbox-control lightbox-next" aria-label="Next image">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        // --- THEME SWITCHER ---
+        const themeToggleButton = document.getElementById('theme-toggle-button');
+        const htmlEl = document.documentElement;
+        const themes = ['dark-mode', 'light-mode', 'high-contrast-mode'];
+        const icons = ['dark-icon', 'light-icon', 'contrast-icon'];
+        let currentThemeIndex = themes.indexOf(
+            htmlEl.classList.contains('dark-mode') ? 'dark-mode' :
+            htmlEl.classList.contains('light-mode') ? 'light-mode' :
+            'high-contrast-mode'
+        );
+        if (currentThemeIndex === -1) { currentThemeIndex = 1; htmlEl.classList.add(themes[currentThemeIndex]); }
+
+        function applyTheme(themeIndex, isInitialLoad = false) {
+            const previousThemeClass = themes[currentThemeIndex];
+            if (previousThemeClass !== themes[themeIndex]) {
+                htmlEl.classList.remove(previousThemeClass);
+                htmlEl.classList.add(themes[themeIndex]);
+            }
+            currentThemeIndex = themeIndex;
+            const nextThemeIconToShow = icons[(currentThemeIndex + 1) % themes.length];
+            document.querySelectorAll('.theme-icon').forEach(iconEl => {
+                iconEl.classList.toggle('active', iconEl.classList.contains(nextThemeIconToShow));
+            });
+            if (!isInitialLoad) { localStorage.setItem('portfolioThemeIndex', themeIndex); }
+        }
+        applyTheme(currentThemeIndex, true);
+        if(themeToggleButton) {
+            themeToggleButton.addEventListener('click', () => {
+                applyTheme((currentThemeIndex + 1) % themes.length, false);
+            });
+        }
+
+        // --- UPDATE YEAR ---
+        const currentYearEl = document.getElementById('current-year');
+        if (currentYearEl) { currentYearEl.textContent = new Date().getFullYear(); }
+
+
+        // --- INITIAL PAGE LOAD ANIMATIONS (NUR FÜR GALERIE-TITEL) ---
+        function initPageAnimations() {
+            const galleryTitle = document.querySelector('.gallery-title');
+
+            if (galleryTitle) {
+                if (motionQuery.matches) {
+                    galleryTitle.classList.add('visible-reduced-motion');
+                } else {
+                    galleryTitle.style.transitionDelay = `0.2s`; // Kleine Verzögerung
+                    galleryTitle.classList.add('visible');
+                }
+            }
+        }
+        initPageAnimations();
+
+
+        // --- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS (media-item, page-footer) ---
+        const elementsToAnimateOnScroll = document.querySelectorAll('.media-item, .page-footer');
+        if (elementsToAnimateOnScroll.length > 0) {
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        if (motionQuery.matches) {
+                            el.classList.add('visible-reduced-motion');
+                        } else {
+                            if (el.classList.contains('media-item')) {
+                                // Berechne den Index des Media-Items innerhalb seiner sichtbaren Geschwister
+                                // um eine konsistente Staffelung zu gewährleisten, auch wenn einige Items
+                                // durch andere Mittel (z.B. Filter, die hier nicht existieren) versteckt würden.
+                                const mediaItemsInGrid = Array.from(el.parentElement.children)
+                                                              .filter(child => child.classList.contains('media-item'));
+                                const itemIndex = mediaItemsInGrid.indexOf(el);
+                                el.style.transitionDelay = `${itemIndex * 0.1}s`; // Staffelung
+                            }
+                            // Für .page-footer ist die Transition-Delay im CSS definiert
+                            el.classList.add('visible');
+                        }
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elementsToAnimateOnScroll.forEach(el => {
+                scrollObserver.observe(el);
+            });
+        }
+        
+        motionQuery.addEventListener('change', (e) => {
+            document.querySelectorAll('.gallery-title, .media-item, .page-footer').forEach(el => {
+                if (e.matches) {
+                    el.classList.remove('visible');
+                    el.classList.add('visible-reduced-motion');
+                } else {
+                    el.classList.remove('visible-reduced-motion');
+                    if (!el.classList.contains('visible')) {
+                        el.style.opacity = 0; // Zurücksetzen auf CSS-Anfangszustand
+                        if(el.classList.contains('gallery-title') || el.classList.contains('page-footer')) el.style.transform = 'translateY(20px)';
+                        else if (el.classList.contains('media-item')) el.style.transform = 'translateY(30px) scale(0.95)';
+                    }
+                }
+            });
+            if (!e.matches) {
+                initPageAnimations();
+                // Bereits sichtbare IO-Elemente bleiben sichtbar.
+                // Noch nicht sichtbare werden vom IO erfasst, wenn sie in den Viewport kommen.
+            }
+        });
+
+        // --- LIGHTBOX GALLERY FUNCTIONALITY ---
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCaptionText = document.getElementById('lightboxCaptionText');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        const lightboxCloseButton = document.getElementById('lightboxClose');
+        const lightboxPrevButton = document.getElementById('lightboxPrev');
+        const lightboxNextButton = document.getElementById('lightboxNext');
+        
+        let currentGallery = [];
+        let currentImageIndexInGallery = 0;
+        let previouslyFocusedElement;
+
+        function updateLightboxTriggersAndGallery() {
+            currentGallery = Array.from(document.querySelectorAll('.media-item:not([style*="display: none"]) .lightbox-trigger, .media-item:not([hidden]) .lightbox-trigger'));
+        }
+
+        function showImageInLightbox(index) {
+            if (index < 0 || index >= currentGallery.length || !lightboxImage) { return; }
+            currentImageIndexInGallery = index;
+            const triggerElement = currentGallery[index];
+            const fullImageSrc = triggerElement.href;
+            const altText = triggerElement.querySelector('img')?.alt || 'Enlarged image';
+            const caption = triggerElement.dataset.caption || altText;
+
+            lightboxImage.style.opacity = '0';
+            lightboxImage.onload = () => {
+                lightboxImage.style.transitionDuration = motionQuery.matches ? '0.01s' : getComputedStyle(htmlEl).getPropertyValue('--lightbox-image-fade-duration').trim() || '0.25s';
+                lightboxImage.style.opacity = '1';
+            };
+            lightboxImage.onerror = () => {
+                if(lightboxCaptionText) lightboxCaptionText.textContent = "Error loading image.";
+                lightboxImage.src = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
+                lightboxImage.style.opacity = '1';
+            };
+            lightboxImage.src = fullImageSrc;
+            lightboxImage.alt = altText;
+            if(lightboxCaptionText) lightboxCaptionText.textContent = caption;
+            if(lightboxCounter) lightboxCounter.textContent = `Image ${index + 1} of ${currentGallery.length}`;
+            if(lightboxPrevButton) lightboxPrevButton.disabled = (index === 0);
+            if(lightboxNextButton) lightboxNextButton.disabled = (index === currentGallery.length - 1);
+        }
+
+        function openLightbox(clickedTriggerElement) {
+            updateLightboxTriggersAndGallery();
+            const clickedIndex = currentGallery.indexOf(clickedTriggerElement);
+
+            if (clickedIndex === -1 || !lightbox) return;
+            previouslyFocusedElement = document.activeElement;
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            showImageInLightbox(clickedIndex);
+            if (lightboxCloseButton) lightboxCloseButton.focus();
+        }
+
+        function closeLightbox() {
+            if (!lightbox) return;
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            if(lightboxImage) {
+                lightboxImage.src = "";
+                lightboxImage.style.opacity = '0';
+            }
+            if (previouslyFocusedElement) { previouslyFocusedElement.focus(); }
+        }
+        
+        document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function(event) {
+                event.preventDefault();
+                openLightbox(this);
+            });
+        });
+
+        if (lightboxCloseButton) lightboxCloseButton.addEventListener('click', closeLightbox);
+        if (lightboxPrevButton) lightboxPrevButton.addEventListener('click', () => {
+            if (currentImageIndexInGallery > 0) { showImageInLightbox(currentImageIndexInGallery - 1); }
+        });
+        if (lightboxNextButton) lightboxNextButton.addEventListener('click', () => {
+            if (currentImageIndexInGallery < currentGallery.length - 1) { showImageInLightbox(currentImageIndexInGallery + 1); }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (!lightbox || !lightbox.classList.contains('active')) return;
+            if (event.key === 'Escape') { closeLightbox(); }
+            else if (event.key === 'ArrowLeft' && lightboxPrevButton && !lightboxPrevButton.disabled) { lightboxPrevButton.click(); }
+            else if (event.key === 'ArrowRight' && lightboxNextButton && !lightboxNextButton.disabled) { lightboxNextButton.click(); }
+            else if (event.key === 'Tab') {
+                const focusableElements = [lightboxCloseButton, lightboxPrevButton, lightboxNextButton].filter(el => el && !el.disabled);
+                if (!focusableElements.length) return;
+                const firstFocusable = focusableElements[0];
+                const lastFocusable = focusableElements[focusableElements.length - 1];
+                if (event.shiftKey) {
+                    if (document.activeElement === firstFocusable) { lastFocusable.focus(); event.preventDefault(); }
+                } else {
+                    if (document.activeElement === lastFocusable) { firstFocusable.focus(); event.preventDefault(); }
+                }
+            }
+        });
+
+        if (lightbox) {
+          lightbox.addEventListener('click', function(event) {
+              if (event.target === lightbox) { closeLightbox(); }
+          });
+        }
+
+        function handleReducedMotionLightbox() {
+            if(lightbox) {
+                if(motionQuery.matches) { lightbox.classList.add('reduced-motion'); }
+                else { lightbox.classList.remove('reduced-motion'); }
+            }
+        }
+        handleReducedMotionLightbox();
+        motionQuery.addEventListener('change', handleReducedMotionLightbox);
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de" class="dark-mode"> <!-- Standard-Theme, wird durch JS überschrieben -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum - Bobohs Portfolio</title>
+    <meta name="description" content="Impressum für das Portfolio von Boboh.">
+
+    <script>
+        // Anti-Flashbang Script (Identisch zu anderen Seiten)
+        (function() {
+            const themes = ['dark-mode', 'light-mode', 'high-contrast-mode'];
+            let pageDefaultTheme = document.documentElement.classList.contains('dark-mode') ? 'dark-mode' : document.documentElement.classList.contains('high-contrast-mode') ? 'high-contrast-mode' : 'light-mode';
+            let currentThemeClass = pageDefaultTheme;
+            try { const savedThemeIndex = localStorage.getItem('portfolioThemeIndex'); if (savedThemeIndex !== null) { const themeIndex = parseInt(savedThemeIndex, 10); if (themeIndex >= 0 && themeIndex < themes.length) { currentThemeClass = themes[themeIndex]; } } } catch (e) {}
+            themes.forEach(theme => document.documentElement.classList.remove(theme)); document.documentElement.classList.add(currentThemeClass);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Dela+Gothic+One&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Stile für Legal-Seiten (wie zuvor, hier inline für Übersichtlichkeit der Abgabe) */
+        .legal-page-main {
+            padding: 40px 6vw;
+            background-color: var(--bg-primary-content);
+            color: var(--text-primary);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Zentriert den Container horizontal */
+        }
+        .legal-content-container {
+            max-width: 800px; width: 100%; margin: 20px 0; padding: 30px;
+            background-color: var(--bg-secondary-content);
+            border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-secondary); color: var(--text-card-primary);
+        }
+        .legal-content-container h1 {
+            text-align: center; margin-bottom: 30px; font-family: 'Dela Gothic One', cursive;
+            font-size: 2em; color: var(--text-accent);
+        }
+        .legal-content-container h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5em; color: var(--text-accent);
+            margin-top: 25px; margin-bottom: 10px;
+            border-bottom: 1px solid var(--border-secondary); /* Leichte Trennlinie */
+            padding-bottom: 5px;
+        }
+        .legal-content-container p, .legal-content-container ul {
+            font-family: 'Inter', sans-serif;
+            font-size: 1em; line-height: 1.7; color: var(--text-card-primary);
+            margin-bottom: 1.2em;
+        }
+        .legal-content-container ul { padding-left: 25px; list-style-type: disc; }
+        .legal-content-container address { font-style: normal; margin-bottom: 1.2em; }
+        .legal-content-container a { color: var(--text-accent); text-decoration: underline; }
+        .legal-content-container a:hover,
+        .legal-content-container a:focus-visible { color: var(--highlight-color); text-decoration: none; }
+        .active-footer-nav { font-weight: bold; /* Beispiel für Hervorhebung */ }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <header class="page-header" role="banner">
+        <nav class="main-navigation" aria-label="Hauptnavigation">
+            <ul>
+                <li><a href="index.html#about"><span class="link-text-wrapper">Über Mich</span></a></li>
+                <li><a href="index.html#projects"><span class="link-text-wrapper">Projekte</span></a></li>
+                <li><a href="css-art.html"><span class="link-text-wrapper">CSS Tier Kunst</span></a></li>
+                <li><a href="favorites-form.html"><span class="link-text-wrapper">Favoriten Formular</span></a></li>
+            </ul>
+        </nav>
+        <div class="theme-switcher-container">
+            <button id="theme-toggle-button" aria-label="Theme wechseln" title="Theme wechseln">
+                <span class="icon-wrapper">
+                    <i class="fas fa-sun light-icon theme-icon" aria-hidden="true"></i>
+                    <i class="fas fa-moon dark-icon theme-icon" aria-hidden="true"></i>
+                    <i class="fas fa-adjust contrast-icon theme-icon" aria-hidden="true"></i>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <main role="main" class="legal-page-main">
+        <article class="legal-content-container" aria-labelledby="impressum-heading">
+            <h1 id="impressum-heading">Impressum</h1>
+            
+            <p>Angaben gemäß § 5 TMG (Telemediengesetz) für Deutschland.</p>
+            
+            <section aria-labelledby="impressum-ansprechpartner">
+                <h2 id="impressum-ansprechpartner">Anbieter und Kontakt:</h2>
+                <address>
+                    Max Mustermann (Pseudonym: Boboh)<br>
+                    Musterstraße 123<br>
+                    12345 Musterstadt<br>
+                    Deutschland
+                </address>
+                <p>
+                    <strong>Telefon:</strong> +49 (0) 123 4567890 (Muster)<br>
+                    <strong>E-Mail:</strong> <a href="mailto:portfolio.boboh@example.com">portfolio.boboh@example.com</a> (Muster)
+                </p>
+            </section>
+
+            <section aria-labelledby="impressum-verantwortlich">
+                <h2 id="impressum-verantwortlich">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</h2>
+                <address>
+                    Max Mustermann<br>
+                    Anschrift wie oben
+                </address>
+            </section>
+
+            <section aria-labelledby="impressum-haftungsausschluss">
+                <h2 id="impressum-haftungsausschluss">Haftungsausschluss (Disclaimer)</h2>
+                <p><strong>Haftung für Inhalte</strong></p>
+                <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+                
+                <p><strong>Haftung für Links</strong></p>
+                <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+                
+                <p><strong>Urheberrecht</strong></p>
+                <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+            </section>
+            <p><small><em>Hinweis: Dies ist ein Muster-Impressum für ein Studentenprojekt und erhebt keinen Anspruch auf juristische Vollständigkeit oder Korrektheit für eine reale Webseite.</em></small></p>
+        </article>
+    </main>
+
+    <footer class="page-footer" role="contentinfo">
+        <div class="footer-content footer-animate">
+            <p>© <span id="current-year"></span> Bobohs Portfolio. Alle Rechte vorbehalten.</p>
+            <nav class="footer-navigation" aria-label="Fußzeilennavigation">
+                <ul>
+                    <li><a href="impressum.html" class="active-footer-nav">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                    <li><a href="barrierefreiheit.html">Barrierefreiheit</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // Standard JS (Theme, Year, Footer Animation) - Identisch zu anderen Seiten
+        document.addEventListener('DOMContentLoaded', () => {
+            const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const themeToggleButton = document.getElementById('theme-toggle-button');
+            const htmlEl = document.documentElement;
+            const themes = ['dark-mode', 'light-mode', 'high-contrast-mode'];
+            const icons = ['dark-icon', 'light-icon', 'contrast-icon'];
+            let currentThemeIndex = themes.indexOf( htmlEl.classList.contains('dark-mode') ? 'dark-mode' : htmlEl.classList.contains('light-mode') ? 'light-mode' : 'high-contrast-mode');
+            if (currentThemeIndex === -1) { currentThemeIndex = 1; htmlEl.classList.add(themes[currentThemeIndex]); }
+            function applyTheme(themeIndex, isInitialLoad = false) { const previousThemeClass = themes[currentThemeIndex]; if (previousThemeClass !== themes[themeIndex]) { htmlEl.classList.remove(previousThemeClass); htmlEl.classList.add(themes[themeIndex]); } currentThemeIndex = themeIndex; const nextThemeIconToShow = icons[(currentThemeIndex + 1) % themes.length]; document.querySelectorAll('.theme-icon').forEach(iconEl => { iconEl.classList.toggle('active', iconEl.classList.contains(nextThemeIconToShow)); }); if (!isInitialLoad) { localStorage.setItem('portfolioThemeIndex', themeIndex); } }
+            applyTheme(currentThemeIndex, true);
+            if(themeToggleButton) { themeToggleButton.addEventListener('click', () => { applyTheme((currentThemeIndex + 1) % themes.length, false); }); }
+            const currentYearEl = document.getElementById('current-year'); if (currentYearEl) { currentYearEl.textContent = new Date().getFullYear(); }
+            const footerContent = document.querySelector('.footer-content.footer-animate'); if (footerContent) { if (motionQuery.matches) { footerContent.classList.add('visible-reduced-motion'); } else { setTimeout(() => footerContent.classList.add('visible'), 100); } }
+        });
+    </script>
+</body>
+</html>
