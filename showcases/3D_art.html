@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="de" class="dark-mode">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase 3D-Art</title>
+    <meta name="description" content="3D-Section.">
+
+    <script>
+        // Anti-Flashbang Script
+        (function() {
+            const themes = ['dark-mode', 'light-mode', 'high-contrast-mode'];
+            let pageDefaultTheme = 'light-mode';
+            if (document.documentElement.classList.contains('dark-mode')) {
+                pageDefaultTheme = 'dark-mode';
+            } else if (document.documentElement.classList.contains('high-contrast-mode')) {
+                pageDefaultTheme = 'high-contrast-mode';
+            }
+            let currentThemeClass = pageDefaultTheme;
+            try {
+                const savedThemeIndex = localStorage.getItem('portfolioThemeIndex');
+                if (savedThemeIndex !== null) {
+                    const themeIndex = parseInt(savedThemeIndex, 10);
+                    if (themeIndex >= 0 && themeIndex < themes.length) {
+                        currentThemeClass = themes[themeIndex];
+                    }
+                }
+            } catch (e) { /* console.warn('Could not access localStorage for theme.', e); */ }
+            themes.forEach(theme => document.documentElement.classList.remove(theme));
+            document.documentElement.classList.add(currentThemeClass);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/showcase-style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Dela+Gothic+One&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .media-grid {
+            display: grid;
+            /* Experimentiere mit diesem Wert, um die gewünschte Größe zu erreichen.
+               Ein höherer Wert macht die Elemente breiter (weniger Spalten). */
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Macht Elemente größer */
+            gap: 1.5rem; /* Abstand zwischen den Elementen */
+        }
+
+        .media-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16 / 9; /* Stellt einheitliches 16:9 Seitenverhältnis sicher */
+            background-color: #2a2438; /* Fallback-Hintergrund, anpassbar */
+            border-radius: 6px; /* Abgerundete Ecken, anpassbar */
+        }
+
+        /* Stellt sicher, dass der Link-Container (für Lightbox) das media-item füllt */
+        .media-item .lightbox-trigger {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .media-item img { /* Gilt für normale Bilder UND GIFs */
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;   /* Skaliert das Bild, um den Container auszufüllen, schneidet ggf. ab */
+            object-position: center; /* Zentriert das Bild vor dem Zuschneiden */
+            border-radius: inherit; /* Übernimmt border-radius vom .media-item */
+        }
+
+        /* Falls du auch Videos in dieser Galerie hättest, wären diese Regeln relevant: */
+        .media-item-video .responsive-iframe-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding-top: 0; /* Nicht mehr nötig wegen aspect-ratio auf .media-item */
+        }
+
+        .media-item-video .responsive-iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <header class="page-header" role="banner">
+        <nav class="main-navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="../index.html?category=all#projects"><span class="link-text-wrapper">ALL</span></a></li>
+				<li><a href="../showcases/programming.html"><span class="link-text-wrapper">PROGRAMMING</span></a></li> <!-- Korrigierter Link für Programming -->
+                <li><a href="../showcases/3D_art.html"><span class="link-text-wrapper">3D ART</span></a></li>
+                <li><a href="../showcases/ui_design.html"><span class="link-text-wrapper">UI</span></a></li> <!-- Angenommener Link für UI -->
+            </ul>
+        </nav>
+        <div class="theme-switcher-container">
+            <button id="theme-toggle-button" aria-label="Toggle theme" title="Toggle theme">
+                <span class="icon-wrapper">
+                    <i class="fas fa-sun light-icon theme-icon" aria-hidden="true"></i>
+                    <i class="fas fa-moon dark-icon theme-icon" aria-hidden="true"></i>
+                    <i class="fas fa-adjust contrast-icon theme-icon" aria-hidden="true"></i>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <main role="main" class="gallery-main">
+        <h1 class="gallery-title">3D MEDIA GALLERY</h1>
+        
+        <div class="media-grid">
+		     <figure class="media-item">
+                <a href="../img/revolt_renders/Render3.png" class="lightbox-trigger" aria-label="Thumbnail for the game Revolt." data-caption="A fed caught lacking by John Revolt.">
+                    <img src="../img/revolt_renders/Render3.png" alt="3D-Model of a G19 Gen 5.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/epicos.png" class="lightbox-trigger" aria-label="3D-Model of a G19 Gen 5." data-caption="Detailed 3D-Model of a G19 5th Generation with a mos slide, rubber grip and suppressor sights.">
+                    <img src="../img/3D_art/epicos.png" alt="3D-Model of a G19 Gen 5.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/draco.png" class="lightbox-trigger" aria-label="3D-Model of a Mini Draco AK." data-caption="Detailed 3D-Model of a mini draco ak.">
+                    <img src="../img/3D_art/draco.png" alt="3D-Model of a Mini Draco AK.">
+                </a>
+            </figure>
+			
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/g452.png" class="lightbox-trigger" aria-label="3D-Model of a AK47 With a G45 magnifier and eotech holosight." data-caption="3D-Model of a AK47 With a G45 magnifier and eotech holosight.">
+                    <img src="../img/3D_art/g452.png" alt="3D-Model of a AK47.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/tbrender_Viewport_011.png" class="lightbox-trigger" aria-label="3D-Model of a MK14-EBR." data-caption="3D-Model of a MK14-EBR.">
+                    <img src="../img/3D_art/tbrender_Viewport_011.png" alt="3D-Model of a MK14-EBR.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/r7002.png" class="lightbox-trigger" aria-label="3D-Model of a R700 Rifle." data-caption="3D-Model of a R700 Rifle.">
+                    <img src="../img/3D_art/r7002.png" alt="D-Model of a R700 Rifle.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/Mac.png" class="lightbox-trigger" aria-label="3D-Model of a Mac10 SMG." data-caption="3D-Model of a Mac10 SMG.">
+                    <img src="../img/3D_art/Mac.png" alt="3D-Model of a Mac10 SMG.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/MacUsa2.png" class="lightbox-trigger" aria-label="3D-Model of a Patriotic Mac10 SMG." data-caption="3D-Model of a Patriotic Mac10 SMG.">
+                    <img src="../img/3D_art/MacUsa2.png" alt="3D-Model of a Patriotic Mac10 SMG.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/Skin.png" class="lightbox-trigger" aria-label="3D-Model of a M107 with a skin." data-caption="3D-Model of a M107 with a skin.">
+                    <img src="../img/3D_art/Skin.png" alt="3D-Model of a M107 with a skin.">
+                </a>
+            </figure>
+			
+						
+			<figure class="media-item">
+                <a href="../img/3D_art/aimp3.png" class="lightbox-trigger" aria-label="3D-Model of Aimpoint T1 with a riser." data-caption="3D-Model of Aimpoint T1 with a riser.">
+                    <img src="../img/3D_art/aimp3.png" alt="3D-Model of Aimpoint T1 with a riser.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/ACRO.png" class="lightbox-trigger" aria-label="3D-Model of Acro2 sight." data-caption="3D-Model of Acro2 sight.">
+                    <img src="../img/3D_art/ACRO.png" alt="3D-Model of Acro2 sight.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/lsg.png" class="lightbox-trigger" aria-label="3D-Model of LSG module." data-caption="3D-Model of LSG module.">
+                    <img src="../img/3D_art/lsg.png" alt="3D-Model of LSG module.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/12gaugesup.png" class="lightbox-trigger" aria-label="3D-Model of 12 gauge suppressor." data-caption="3D-Model of 12 gauge suppressor based on a silencer co model.">
+                    <img src="../img/3D_art/12gaugesup.png" alt="3D-Model of 12 gauge suppressor.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/aafhfahafhhfa.png" class="lightbox-trigger" aria-label="CAD-Model of ACOG Sight." data-caption="CAD-Model of ACOG Sight.">
+                    <img src="../img/3D_art/aafhfahafhhfa.png" alt="CAD-Model of ACOG Sight.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/aafhhafafhfha.png" class="lightbox-trigger" aria-label="CAD-Model of a Magul M4 with a ACOG Sight." data-caption="CAD-Model of a Magul M4 with a ACOG Sight.">
+                    <img src="../img/3D_art/aafhhafafhfha.png" alt="CAD-Model of a Magul M4 with a ACOG Sight.">
+                </a>
+            </figure>
+			
+						<figure class="media-item">
+                <a href="../img/3D_art/arps.png" class="lightbox-trigger" aria-label="CAD-Model of Exotic AR-Pistol." data-caption="CAD-Model of Exotic AR-Pistol.">
+                    <img src="../img/3D_art/arps.png" alt="CAD-Model of Exotic AR-Pistol.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/MAP3.png" class="lightbox-trigger" aria-label="Image of a ingame bagel store interior." data-caption="Bagel store interior.">
+                    <img src="../img/3D_art/MAP3.png" alt="Image of a ingame bagel store interior.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/MAP2.png" class="lightbox-trigger" aria-label="Image of a ingame bagel store exterior." data-caption="Bagel store exterior.">
+                    <img src="../img/3D_art/MAP2.png" alt="Image of a ingame bagel store exterior.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/Map4.png" class="lightbox-trigger" aria-label="Image of a ingame coastline." data-caption="Image of a ingame coastline.">
+                    <img src="../img/3D_art/Map4.png" alt="Image of a ingame coastline.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/Mapidk.png" class="lightbox-trigger" aria-label="Image of a ingame park view at night." data-caption="Image of a ingame park view at night.">
+                    <img src="../img/3D_art/Mapidk.png" alt="Image of a ingame park view at night.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/something.png" class="lightbox-trigger" aria-label="Image of a ingame sub urbean area view at night." data-caption="Image of a ingame sub urbean area view at night.">
+                    <img src="../img/3D_art/something.png" alt="Image of a ingame sub urbean area view at night.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/yeaaah.png" class="lightbox-trigger" aria-label="Image of a ingame church exterior." data-caption="church exterior.">
+                    <img src="../img/3D_art/yeaaah.png" alt="Image of a church exterior.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/jesas.png" class="lightbox-trigger" aria-label="Image of a ingame church interior." data-caption="church interior.">
+                    <img src="../img/3D_art/jesas.png" alt="Image of a church interior.">
+                </a>
+            </figure>
+			
+			<figure class="media-item">
+                <a href="../img/3D_art/MAP.png" class="lightbox-trigger" aria-label="Image of a ingame storefronts." data-caption="Storefronts.">
+                    <img src="../img/3D_art/MAP.png" alt="Image of a ingame storefronts.">
+                </a>
+            </figure>
+        </div>
+    </main>
+
+    <footer class="page-footer" role="contentinfo">
+        <div class="footer-content">
+            <p>© <span id="current-year"></span> Boboh's Portfolio. All rights reserved.</p>
+            <nav class="footer-navigation" aria-label="Footer navigation">
+                <ul>
+                    <li><a href="../impressum.html" class="active-footer-nav">Legal Notice</a></li>
+                    <li><a href="../datenschutz.html">Privacy Policy</a></li>
+                    <li><a href="../barrierefreiheit.html">Accessibility</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <div id="imageLightbox" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightboxCaptionText">
+        <button id="lightboxClose" class="lightbox-control lightbox-close" aria-label="Close image viewer"><i class="fas fa-times" aria-hidden="true"></i></button>
+        <button id="lightboxPrev" class="lightbox-control lightbox-prev" aria-label="Previous image">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="lightbox-content-wrapper">
+            <figure class="lightbox-figure">
+                <img src="" alt="" id="lightboxImage" />
+            </figure>
+            <figcaption id="lightboxCaption" class="lightbox-caption">
+                <p id="lightboxCaptionText"></p>
+                <p id="lightboxCounter" class="lightbox-counter" aria-live="polite"></p>
+            </figcaption>
+        </div>
+        <button id="lightboxNext" class="lightbox-control lightbox-next" aria-label="Next image">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        // --- THEME SWITCHER ---
+        const themeToggleButton = document.getElementById('theme-toggle-button');
+        const htmlEl = document.documentElement;
+        const themes = ['dark-mode', 'light-mode', 'high-contrast-mode'];
+        const icons = ['dark-icon', 'light-icon', 'contrast-icon'];
+        let currentThemeIndex = themes.indexOf(
+            htmlEl.classList.contains('dark-mode') ? 'dark-mode' :
+            htmlEl.classList.contains('light-mode') ? 'light-mode' :
+            'high-contrast-mode'
+        );
+        if (currentThemeIndex === -1) { currentThemeIndex = 1; htmlEl.classList.add(themes[currentThemeIndex]); }
+
+        function applyTheme(themeIndex, isInitialLoad = false) {
+            const previousThemeClass = themes[currentThemeIndex];
+            // Remove old theme class only if it's different and exists
+            if (htmlEl.classList.contains(previousThemeClass) && previousThemeClass !== themes[themeIndex]) {
+                htmlEl.classList.remove(previousThemeClass);
+            }
+            // Add new theme class if it's not already there
+            if (!htmlEl.classList.contains(themes[themeIndex])) {
+                htmlEl.classList.add(themes[themeIndex]);
+            }
+            currentThemeIndex = themeIndex;
+            const nextThemeIconToShow = icons[(currentThemeIndex + 1) % themes.length];
+            document.querySelectorAll('.theme-icon').forEach(iconEl => {
+                iconEl.classList.remove('active'); // Ensure all are inactive first
+                if (iconEl.classList.contains(nextThemeIconToShow)) {
+                     iconEl.classList.add('active');
+                }
+            });
+            if (!isInitialLoad) { 
+                try { localStorage.setItem('portfolioThemeIndex', themeIndex); }
+                catch(e) { /* ignore */ }
+            }
+        }
+        applyTheme(currentThemeIndex, true); // Apply on load
+        if(themeToggleButton) {
+            themeToggleButton.addEventListener('click', () => {
+                applyTheme((currentThemeIndex + 1) % themes.length, false);
+            });
+        }
+
+        // --- UPDATE YEAR ---
+        const currentYearEl = document.getElementById('current-year');
+        if (currentYearEl) { currentYearEl.textContent = new Date().getFullYear(); }
+
+
+        // --- INITIAL PAGE LOAD ANIMATIONS ---
+        function initPageAnimations() {
+            const galleryTitle = document.querySelector('.gallery-title');
+
+            if (galleryTitle) {
+                if (motionQuery.matches) {
+                    galleryTitle.classList.add('visible-reduced-motion');
+                } else {
+                    galleryTitle.style.transitionDelay = `0.2s`;
+                    galleryTitle.classList.add('visible');
+                }
+            }
+        }
+        initPageAnimations();
+
+
+        // --- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS (media-item, page-footer) ---
+        const elementsToAnimateOnScroll = document.querySelectorAll('.media-item, .page-footer');
+        if (elementsToAnimateOnScroll.length > 0) {
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        if (motionQuery.matches) {
+                            el.classList.add('visible-reduced-motion');
+                        } else {
+                            if (el.classList.contains('media-item')) {
+                                const mediaItemsInGrid = Array.from(el.parentElement.children)
+                                                              .filter(child => child.classList.contains('media-item') && window.getComputedStyle(child).display !== 'none');
+                                const itemIndex = mediaItemsInGrid.indexOf(el);
+                                el.style.transitionDelay = `${itemIndex * 0.1}s`;
+                            }
+                            el.classList.add('visible');
+                        }
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elementsToAnimateOnScroll.forEach(el => {
+                scrollObserver.observe(el);
+            });
+        }
+        
+        motionQuery.addEventListener('change', (e) => {
+            const allAnimatedElements = document.querySelectorAll('.gallery-title, .media-item, .page-footer');
+            allAnimatedElements.forEach(el => {
+                const wasVisible = el.classList.contains('visible');
+                const wasVisibleReduced = el.classList.contains('visible-reduced-motion');
+
+                // Reset states
+                el.classList.remove('visible', 'visible-reduced-motion');
+                el.style.opacity = '';
+                el.style.transform = '';
+                el.style.transitionDelay = '';
+
+
+                if (e.matches) { // Reduced motion ON
+                    el.classList.add('visible-reduced-motion');
+                } else { // Reduced motion OFF
+                    // Re-apply original animation logic if it would have been visible
+                    // For gallery-title:
+                    if (el.classList.contains('gallery-title')) {
+                        initPageAnimations(); // This will re-apply .visible or .visible-reduced-motion
+                    }
+                    // For IO elements:
+                    // If it was visible before, make it visible again (without IO re-triggering delay)
+                    // Otherwise, IO will handle it when it scrolls into view.
+                    else if (el.classList.contains('media-item') || el.classList.contains('page-footer')) {
+                        if (wasVisible || wasVisibleReduced) { // If it was meant to be seen
+                           if (el.classList.contains('media-item')) {
+                                // Re-calculate delay for non-reduced motion if it was visible
+                                const mediaItemsInGrid = Array.from(el.parentElement.children)
+                                                              .filter(child => child.classList.contains('media-item') && window.getComputedStyle(child).display !== 'none');
+                                const itemIndex = mediaItemsInGrid.indexOf(el);
+                                el.style.transitionDelay = `${itemIndex * 0.1}s`;
+                            }
+                            el.classList.add('visible');
+                        } else {
+                            // Reset for IO to pick up again if not yet scrolled into view
+                             el.style.opacity = '0'; // As per initial CSS state before animation
+                             if(el.classList.contains('page-footer')) el.style.transform = 'translateY(20px)';
+                             else if (el.classList.contains('media-item')) el.style.transform = 'translateY(30px) scale(0.95)';
+                        }
+                    }
+                }
+            });
+             if (!e.matches) { // If motion got re-enabled, re-init title animation specifically
+                initPageAnimations(); // Ensures title animates correctly if it was already visible
+            }
+        });
+
+        // --- LIGHTBOX GALLERY FUNCTIONALITY ---
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCaptionText = document.getElementById('lightboxCaptionText');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        const lightboxCloseButton = document.getElementById('lightboxClose');
+        const lightboxPrevButton = document.getElementById('lightboxPrev');
+        const lightboxNextButton = document.getElementById('lightboxNext');
+        
+        let currentGallery = [];
+        let currentImageIndexInGallery = 0;
+        let previouslyFocusedElement;
+
+        function updateLightboxTriggersAndGallery() {
+            // Filter out triggers from items that might be hidden by other scripts (e.g., a filter not present here but good practice)
+             currentGallery = Array.from(document.querySelectorAll('.media-item:not([style*="display: none"]):not([hidden]) .lightbox-trigger'));
+        }
+
+        function showImageInLightbox(index) {
+            if (index < 0 || index >= currentGallery.length || !lightboxImage) { return; }
+            currentImageIndexInGallery = index;
+            const triggerElement = currentGallery[index];
+            const fullImageSrc = triggerElement.href;
+            const imgInsideTrigger = triggerElement.querySelector('img');
+            const altText = imgInsideTrigger ? imgInsideTrigger.alt : 'Enlarged image';
+            const caption = triggerElement.dataset.caption || altText;
+
+            lightboxImage.style.opacity = '0';
+            lightboxImage.onload = () => {
+                lightboxImage.style.transitionDuration = motionQuery.matches ? '0.01s' : (getComputedStyle(htmlEl).getPropertyValue('--lightbox-image-fade-duration') || '0.25s').trim();
+                lightboxImage.style.opacity = '1';
+            };
+            lightboxImage.onerror = () => {
+                if(lightboxCaptionText) lightboxCaptionText.textContent = "Error loading image.";
+                lightboxImage.src = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="; // Placeholder
+                lightboxImage.style.opacity = '1';
+            };
+            lightboxImage.src = fullImageSrc;
+            lightboxImage.alt = caption; // Use caption for lightbox alt, as it's more descriptive for enlarged view
+            
+            if(lightboxCaptionText) lightboxCaptionText.textContent = caption;
+            if(lightboxCounter) lightboxCounter.textContent = `Image ${index + 1} of ${currentGallery.length}`;
+            if(lightboxPrevButton) lightboxPrevButton.disabled = (index === 0);
+            if(lightboxNextButton) lightboxNextButton.disabled = (index === currentGallery.length - 1);
+        }
+
+        function openLightbox(clickedTriggerElement) {
+            updateLightboxTriggersAndGallery();
+            const clickedIndex = currentGallery.indexOf(clickedTriggerElement);
+
+            if (clickedIndex === -1 || !lightbox) return;
+            previouslyFocusedElement = document.activeElement;
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            showImageInLightbox(clickedIndex);
+            if (lightboxCloseButton) lightboxCloseButton.focus();
+        }
+
+        function closeLightbox() {
+            if (!lightbox) return;
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            if(lightboxImage) {
+                lightboxImage.src = ""; // Clear src to stop loading/display
+                lightboxImage.style.opacity = '0';
+            }
+            if (previouslyFocusedElement) { previouslyFocusedElement.focus(); }
+        }
+        
+        document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function(event) {
+                event.preventDefault();
+                openLightbox(this);
+            });
+        });
+
+        if (lightboxCloseButton) lightboxCloseButton.addEventListener('click', closeLightbox);
+        if (lightboxPrevButton) lightboxPrevButton.addEventListener('click', () => {
+            if (currentImageIndexInGallery > 0) { showImageInLightbox(currentImageIndexInGallery - 1); }
+        });
+        if (lightboxNextButton) lightboxNextButton.addEventListener('click', () => {
+            if (currentImageIndexInGallery < currentGallery.length - 1) { showImageInLightbox(currentImageIndexInGallery + 1); }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (!lightbox || !lightbox.classList.contains('active')) return;
+            if (event.key === 'Escape') { closeLightbox(); }
+            else if (event.key === 'ArrowLeft' && lightboxPrevButton && !lightboxPrevButton.disabled) { lightboxPrevButton.click(); }
+            else if (event.key === 'ArrowRight' && lightboxNextButton && !lightboxNextButton.disabled) { lightboxNextButton.click(); }
+            else if (event.key === 'Tab') {
+                const focusableElements = [lightboxCloseButton, lightboxPrevButton, lightboxNextButton].filter(el => el && !el.disabled);
+                if (!focusableElements.length) { event.preventDefault(); return; } // Should not happen if close button is always there
+                const firstFocusable = focusableElements[0];
+                const lastFocusable = focusableElements[focusableElements.length - 1];
+                if (event.shiftKey) { // Shift + Tab
+                    if (document.activeElement === firstFocusable) {
+                        lastFocusable.focus();
+                        event.preventDefault();
+                    }
+                } else { // Tab
+                    if (document.activeElement === lastFocusable) {
+                        firstFocusable.focus();
+                        event.preventDefault();
+                    }
+                }
+            }
+        });
+
+        if (lightbox) { // Click outside to close
+          lightbox.addEventListener('click', function(event) {
+              if (event.target === lightbox) { // Only if the overlay itself is clicked, not content
+                  closeLightbox();
+              }
+          });
+        }
+
+        function handleReducedMotionLightbox() {
+            if(lightbox) {
+                if(motionQuery.matches) { lightbox.classList.add('reduced-motion'); }
+                else { lightbox.classList.remove('reduced-motion'); }
+            }
+        }
+        handleReducedMotionLightbox(); // Initial check
+        motionQuery.addEventListener('change', handleReducedMotionLightbox); // Listen for changes
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="de" class="dark-mode">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase - UI</title>
+    <meta name="description" content="Visual showcase of [Project Title].">
+
+    <script>
+        // Anti-Flashbang Script
+        (function() {
+            const themes = ['dark-mode', 'light-mode', 'high-contrast-mode'];
+            let pageDefaultTheme = 'light-mode';
+            if (document.documentElement.classList.contains('dark-mode')) {
+                pageDefaultTheme = 'dark-mode';
+            } else if (document.documentElement.classList.contains('high-contrast-mode')) {
+                pageDefaultTheme = 'high-contrast-mode';
+            }
+            let currentThemeClass = pageDefaultTheme;
+            try {
+                const savedThemeIndex = localStorage.getItem('portfolioThemeIndex');
+                if (savedThemeIndex !== null) {
+                    const themeIndex = parseInt(savedThemeIndex, 10);
+                    if (themeIndex >= 0 && themeIndex < themes.length) {
+                        currentThemeClass = themes[themeIndex];
+                    }
+                }
+            } catch (e) { /* console.warn('Could not access localStorage for theme.', e); */ }
+            themes.forEach(theme => document.documentElement.classList.remove(theme));
+            document.documentElement.classList.add(currentThemeClass);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/showcase-style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Dela+Gothic+One&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .media-grid {
+            display: grid;
+            /* Experimentiere mit diesem Wert, um die gewünschte Größe zu erreichen.
+               Ein höherer Wert macht die Elemente breiter (weniger Spalten). */
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem; /* Abstand zwischen den Elementen */
+        }
+
+        .media-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background-color: #2a2438;
+            border-radius: 6px;
+        }
+
+        .media-item .lightbox-trigger {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .media-item img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: inherit;
+        }
+
+        .media-item-video .responsive-iframe-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding-top: 0;
+        }
+
+        .media-item-video .responsive-iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <header class="page-header" role="banner">
+        <nav class="main-navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="../index.html?category=all#projects"><span class="link-text-wrapper">ALL</span></a></li>
+				<li><a href="../showcases/programming.html"><span class="link-text-wrapper">PROGRAMMING</span></a></li> <!-- Korrigierter Link für Programming -->
+                <li><a href="../showcases/3D_art.html"><span class="link-text-wrapper">3D ART</span></a></li>
+                <li><a href="../showcases/ui_design.html"><span class="link-text-wrapper">UI</span></a></li> <!-- Angenommener Link für UI -->
+            </ul>
+        </nav>
+        <div class="theme-switcher-container">
+            <button id="theme-toggle-button" aria-label="Toggle theme" title="Toggle theme">
+                <span class="icon-wrapper">
+                    <i class="fas fa-sun light-icon theme-icon" aria-hidden="true"></i>
+                    <i class="fas fa-moon dark-icon theme-icon" aria-hidden="true"></i>
+                    <i class="fas fa-adjust contrast-icon theme-icon" aria-hidden="true"></i>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <main role="main" class="gallery-main">
+        <h1 class="gallery-title">UI Showcase</h1>
+			
+        <div class="media-grid">
+			<figure class="media-item media-item-video">
+                <video
+                    controls
+                    preload="metadata"
+                    src="https://cdn.discordapp.com/attachments/1189320423410782318/1367943601010638859/RevoltIntro.mp4?ex=683b5641&is=683a04c1&hm=360c0c0063ae62f50ca19e4e5bf182550459227478d4da8e15293fdd8f90491a&"
+                    poster=""
+                    title="Animation einer Schrotflinte">
+                    Dein Browser unterstützt das Video-Tag nicht.
+                    <a href="https://cdn.discordapp.com/attachments/1189320423410782318/1367943601010638859/RevoltIntro.mp4?ex=683b5641&is=683a04c1&hm=360c0c0063ae62f50ca19e4e5bf182550459227478d4da8e15293fdd8f90491a&">Lade das Video hier herunter</a>.
+                </video>
+                <figcaption style="position: absolute; bottom: 5px; left: 5px; color: white; background: rgba(0,0,0,0.5); padding: 3px 6px; font-size: 0.8em; border-radius: 3px; pointer-events: none;">
+                    Main Menu
+                </figcaption>
+            </figure>
+			
+			<figure class="media-item">
+                 <a href="https://i.gyazo.com/3c2bb8fb583d003bad8375cf21011c43.gif"
+                    class="lightbox-trigger"
+                    aria-label="View animated GIF: Tür öffnet und schließt sich in einer 3D-Umgebung"
+                    data-caption="Animiertes GIF: Eine Tür öffnet und schließt sich in einer einfachen 3D-Testumgebung.">
+                    <img src="https://i.gyazo.com/3c2bb8fb583d003bad8375cf21011c43.gif"
+                    alt="Animiertes GIF, das eine sich öffnende und schließende Tür in einer 3D-Spielumgebung zeigt.">
+                </a>
+            </figure>
+        </div>
+    </main>
+
+    <footer class="page-footer" role="contentinfo">
+        <div class="footer-content">
+            <p>© <span id="current-year"></span> Boboh's Portfolio. All rights reserved.</p>
+            <nav class="footer-navigation" aria-label="Footer navigation">
+                <ul>
+                    <li><a href="../impressum.html" class="active-footer-nav">Legal Notice</a></li>
+                    <li><a href="../datenschutz.html">Privacy Policy</a></li>
+                    <li><a href="../barrierefreiheit.html">Accessibility</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <div id="imageLightbox" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightboxCaptionText">
+        <button id="lightboxClose" class="lightbox-control lightbox-close" aria-label="Close image viewer"><i class="fas fa-times" aria-hidden="true"></i></button>
+        <button id="lightboxPrev" class="lightbox-control lightbox-prev" aria-label="Previous image">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="lightbox-content-wrapper">
+            <figure class="lightbox-figure">
+                <img src="" alt="" id="lightboxImage" />
+            </figure>
+            <figcaption id="lightboxCaption" class="lightbox-caption">
+                <p id="lightboxCaptionText"></p>
+                <p id="lightboxCounter" class="lightbox-counter" aria-live="polite"></p>
+            </figcaption>
+        </div>
+        <button id="lightboxNext" class="lightbox-control lightbox-next" aria-label="Next image">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        // --- THEME SWITCHER ---
+        const themeToggleButton = document.getElementById('theme-toggle-button');
+        const htmlEl = document.documentElement;
+        const themes = ['dark-mode', 'light-mode', 'high-contrast-mode'];
+        const icons = ['dark-icon', 'light-icon', 'contrast-icon'];
+        let currentThemeIndex = themes.indexOf(
+            Array.from(htmlEl.classList).find(cls => themes.includes(cls)) || 'light-mode'
+        );
+        if (currentThemeIndex === -1) { currentThemeIndex = 1; }
+
+        function applyTheme(themeIndex, isInitialLoad = false) {
+            themes.forEach(theme => htmlEl.classList.remove(theme));
+            htmlEl.classList.add(themes[themeIndex]);
+            currentThemeIndex = themeIndex;
+
+            const nextThemeIconToShow = icons[(currentThemeIndex + 1) % themes.length];
+            document.querySelectorAll('.theme-icon').forEach(iconEl => {
+                iconEl.classList.remove('active');
+                if (iconEl.classList.contains(nextThemeIconToShow)) {
+                    iconEl.classList.add('active');
+                }
+            });
+
+            if (!isInitialLoad) {
+                try {
+                    localStorage.setItem('portfolioThemeIndex', themeIndex);
+                } catch (e) { /* console.warn('Could not access localStorage for theme.', e); */ }
+            }
+        }
+        applyTheme(currentThemeIndex, true);
+
+        if(themeToggleButton) {
+            themeToggleButton.addEventListener('click', () => {
+                applyTheme((currentThemeIndex + 1) % themes.length, false);
+            });
+        }
+
+        // --- UPDATE YEAR ---
+        const currentYearEl = document.getElementById('current-year');
+        if (currentYearEl) { currentYearEl.textContent = new Date().getFullYear(); }
+
+
+        // --- INITIAL PAGE LOAD ANIMATIONS (NUR FÜR GALERIE-TITEL) ---
+        function initPageAnimations() {
+            const galleryTitle = document.querySelector('.gallery-title');
+            if (galleryTitle) {
+                if (motionQuery.matches) {
+                    galleryTitle.classList.add('visible-reduced-motion');
+                } else {
+                    galleryTitle.style.transitionDelay = `0.2s`;
+                    galleryTitle.classList.add('visible');
+                }
+            }
+        }
+        initPageAnimations();
+
+
+        // --- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS (media-item, page-footer) ---
+        const elementsToAnimateOnScroll = document.querySelectorAll('.media-item, .page-footer');
+        if (elementsToAnimateOnScroll.length > 0) {
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        if (motionQuery.matches) {
+                            el.classList.add('visible-reduced-motion');
+                        } else {
+                            if (el.classList.contains('media-item')) {
+                                const mediaItemsInGrid = Array.from(el.parentElement.children)
+                                                              .filter(child => child.classList.contains('media-item'));
+                                const itemIndex = mediaItemsInGrid.indexOf(el);
+                                el.style.transitionDelay = `${itemIndex * 0.1}s`;
+                            }
+                            el.classList.add('visible');
+                        }
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elementsToAnimateOnScroll.forEach(el => {
+                scrollObserver.observe(el);
+            });
+        }
+
+        motionQuery.addEventListener('change', (e) => {
+            document.querySelectorAll('.gallery-title, .media-item, .page-footer').forEach(el => {
+                const isVisible = el.classList.contains('visible') || el.classList.contains('visible-reduced-motion');
+                if (e.matches) {
+                    el.classList.remove('visible');
+                    el.classList.add('visible-reduced-motion');
+                    el.style.transitionDelay = '0s';
+                } else { 
+                    el.classList.remove('visible-reduced-motion');
+                    el.style.opacity = ''; 
+                    el.style.transform = ''; 
+                    el.style.transitionDelay = '';
+
+                    if (el.classList.contains('media-item')) {
+                        const mediaItemsInGrid = Array.from(el.parentElement.children)
+                                                      .filter(child => child.classList.contains('media-item'));
+                        const itemIndex = mediaItemsInGrid.indexOf(el);
+                        el.style.transitionDelay = `${itemIndex * 0.1}s`;
+                        if (isVisible) el.classList.add('visible');
+                    } else if (el.classList.contains('gallery-title')) {
+                        el.style.transitionDelay = '0.2s';
+                        if (isVisible) el.classList.add('visible');
+                    } else if (el.classList.contains('page-footer')) {
+                         if (isVisible) el.classList.add('visible');
+                    }
+                }
+            });
+            if (!e.matches) {
+                initPageAnimations();
+            }
+        });
+
+        // --- LIGHTBOX GALLERY FUNCTIONALITY ---
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCaptionText = document.getElementById('lightboxCaptionText');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        const lightboxCloseButton = document.getElementById('lightboxClose');
+        const lightboxPrevButton = document.getElementById('lightboxPrev');
+        const lightboxNextButton = document.getElementById('lightboxNext');
+
+        let currentGallery = [];
+        let currentImageIndexInGallery = 0;
+        let previouslyFocusedElement;
+
+        function updateLightboxTriggersAndGallery() {
+            currentGallery = Array.from(document.querySelectorAll('.media-item:not(.media-item-video) .lightbox-trigger'));
+        }
+
+        function showImageInLightbox(index) {
+            if (index < 0 || index >= currentGallery.length || !lightboxImage) { return; }
+            currentImageIndexInGallery = index;
+            const triggerElement = currentGallery[index];
+            const fullImageSrc = triggerElement.href;
+            const altText = triggerElement.querySelector('img')?.alt || 'Enlarged content';
+            const caption = triggerElement.dataset.caption || altText;
+
+            lightboxImage.style.opacity = '0';
+            lightboxImage.onload = () => {
+                lightboxImage.style.transitionDuration = motionQuery.matches ? '0.01s' : (getComputedStyle(htmlEl).getPropertyValue('--lightbox-image-fade-duration') || '0.25s').trim();
+                lightboxImage.style.opacity = '1';
+            };
+            lightboxImage.onerror = () => {
+                if(lightboxCaptionText) lightboxCaptionText.textContent = "Error loading image or GIF.";
+                lightboxImage.src = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
+                lightboxImage.style.opacity = '1';
+            };
+            lightboxImage.src = fullImageSrc;
+            lightboxImage.alt = caption; 
+
+            if(lightboxCaptionText) lightboxCaptionText.textContent = caption;
+            if(lightboxCounter) lightboxCounter.textContent = `Image ${index + 1} of ${currentGallery.length}`;
+            if(lightboxPrevButton) lightboxPrevButton.disabled = (index === 0);
+            if(lightboxNextButton) lightboxNextButton.disabled = (index === currentGallery.length - 1);
+        }
+
+        function openLightbox(clickedTriggerElement) {
+            updateLightboxTriggersAndGallery();
+            const clickedIndex = currentGallery.indexOf(clickedTriggerElement);
+
+            if (clickedIndex === -1 || !lightbox) return;
+            previouslyFocusedElement = document.activeElement;
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            showImageInLightbox(clickedIndex);
+            if (lightboxCloseButton) lightboxCloseButton.focus();
+        }
+
+        function closeLightbox() {
+            if (!lightbox) return;
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            if(lightboxImage) {
+                lightboxImage.src = "";
+                lightboxImage.style.opacity = '0';
+            }
+            if (previouslyFocusedElement) { previouslyFocusedElement.focus(); }
+        }
+
+        document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
+            if (!trigger.closest('.media-item-video')) {
+                trigger.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    openLightbox(this);
+                });
+            }
+        });
+
+        if (lightboxCloseButton) lightboxCloseButton.addEventListener('click', closeLightbox);
+        if (lightboxPrevButton) lightboxPrevButton.addEventListener('click', () => {
+            if (currentImageIndexInGallery > 0) { showImageInLightbox(currentImageIndexInGallery - 1); }
+        });
+        if (lightboxNextButton) lightboxNextButton.addEventListener('click', () => {
+            if (currentImageIndexInGallery < currentGallery.length - 1) { showImageInLightbox(currentImageIndexInGallery + 1); }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (!lightbox || !lightbox.classList.contains('active')) return;
+            if (event.key === 'Escape') { closeLightbox(); }
+            else if (event.key === 'ArrowLeft' && lightboxPrevButton && !lightboxPrevButton.disabled) { lightboxPrevButton.click(); }
+            else if (event.key === 'ArrowRight' && lightboxNextButton && !lightboxNextButton.disabled) { lightboxNextButton.click(); }
+            else if (event.key === 'Tab') {
+                const focusableElements = [lightboxCloseButton, lightboxPrevButton, lightboxNextButton].filter(el => el && !el.disabled);
+                if (!focusableElements.length) { event.preventDefault(); return; }
+                const firstFocusable = focusableElements[0];
+                const lastFocusable = focusableElements[focusableElements.length - 1];
+                if (event.shiftKey) {
+                    if (document.activeElement === firstFocusable) { lastFocusable.focus(); event.preventDefault(); }
+                } else {
+                    if (document.activeElement === lastFocusable) { firstFocusable.focus(); event.preventDefault(); }
+                }
+            }
+        });
+
+        if (lightbox) {
+          lightbox.addEventListener('click', function(event) {
+              if (event.target === lightbox) { closeLightbox(); }
+          });
+        }
+
+        function handleReducedMotionLightbox() {
+            if(lightbox) {
+                if(motionQuery.matches) { lightbox.classList.add('reduced-motion'); }
+                else { lightbox.classList.remove('reduced-motion'); }
+            }
+        }
+        handleReducedMotionLightbox();
+        motionQuery.addEventListener('change', handleReducedMotionLightbox);
+    });
+    </script>
+</body>
+</html>

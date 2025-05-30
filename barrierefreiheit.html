@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-mode">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Statement - Boboh's Portfolio</title>
+    <meta name="description" content="Accessibility Statement for Boboh's Portfolio.">
+
+    <script> /* Anti-Flashbang Script */ (function() { const themes = ['dark-mode', 'light-mode', 'high-contrast-mode']; let pageDefaultTheme = document.documentElement.classList.contains('dark-mode') ? 'dark-mode' : document.documentElement.classList.contains('high-contrast-mode') ? 'high-contrast-mode' : 'light-mode'; let currentThemeClass = pageDefaultTheme; try { const savedThemeIndex = localStorage.getItem('portfolioThemeIndex'); if (savedThemeIndex !== null) { const themeIndex = parseInt(savedThemeIndex, 10); if (themeIndex >= 0 && themeIndex < themes.length) { currentThemeClass = themes[themeIndex]; } } } catch (e) {} themes.forEach(theme => document.documentElement.classList.remove(theme)); document.documentElement.classList.add(currentThemeClass); })();</script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <style> /* Identical Styles as in legal_notice.html for .legal-page-main etc. */ .legal-page-main { padding: 40px 6vw; background-color: var(--bg-primary-content); color: var(--text-primary); flex-grow: 1; display: flex; flex-direction: column; align-items: center; } .legal-content-container { max-width: 800px; width: 100%; margin: 20px 0; padding: 30px; background-color: var(--bg-secondary-content); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border-secondary); color: var(--text-card-primary); } .legal-content-container h1 { text-align: center; margin-bottom: 30px; font-family: 'Dela Gothic One', cursive; font-size: 2em; color: var(--text-accent); } .legal-content-container h2 { font-family: 'Inter', sans-serif; font-size: 1.5em; color: var(--text-accent); margin-top: 25px; margin-bottom: 10px; border-bottom: 1px solid var(--border-secondary); padding-bottom: 5px; } .legal-content-container p, .legal-content-container ul { font-family: 'Inter', sans-serif; font-size: 1em; line-height: 1.7; color: var(--text-card-primary); margin-bottom: 1.2em; } .legal-content-container ul { padding-left: 25px; list-style-type: disc; } .legal-content-container address { font-style: normal; margin-bottom: 1.2em; } .legal-content-container a { color: var(--text-accent); text-decoration: underline; } .legal-content-container a:hover, .legal-content-container a:focus-visible { color: var(--highlight-color); text-decoration: none; } .active-footer-nav { font-weight: bold; } </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Dela+Gothic+One&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <header class="page-header" role="banner">
+        <nav class="main-navigation" aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html#about"><span class="link-text-wrapper">ABOUT ME</span></a></li>
+                <li><a href="index.html#projects"><span class="link-text-wrapper">PROJECTS</span></a></li>
+                <li><a href="css-art.html"><span class="link-text-wrapper">CSS ART</span></a></li>
+                <li><a href="favorites-form.html"><span class="link-text-wrapper">FAVORITES FORM</span></a></li>
+            </ul>
+        </nav>
+        <div class="theme-switcher-container">
+            <button id="theme-toggle-button" aria-label="Switch Theme" title="Switch Theme"><span class="icon-wrapper"><i class="fas fa-sun light-icon theme-icon" aria-hidden="true"></i><i class="fas fa-moon dark-icon theme-icon" aria-hidden="true"></i><i class="fas fa-adjust contrast-icon theme-icon" aria-hidden="true"></i></span></button>
+        </div>
+    </header>
+
+    <main role="main" class="legal-page-main">
+        <article class="legal-content-container" aria-labelledby="accessibility-statement-heading">
+            <h1 id="accessibility-statement-heading">Accessibility Statement</h1>
+
+            <p>Boboh's Portfolio strives to make this website accessible in accordance with the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. This accessibility statement applies to the website accessible under the domain https://mcyum.github.io/portfolio/.</p>
+            
+            <section aria-labelledby="accessibility-status">
+                <h2 id="accessibility-status">Status of Compliance with Requirements</h2>
+                <p>This website is largely compliant with the requirements of WCAG 2.1 AA, according to self-assessment. Efforts have been made to ensure high accessibility, including semantic HTML structure, keyboard operability, alternative texts for images, sufficient color contrasts (especially in the high-contrast theme), and consideration of `prefers-reduced-motion`.</p>
+                <p>This accessibility statement was created on May 29, 2025.</p>
+                <p>The assessment was carried out by self-assessment with the help of tools such as the WAVE Evaluation Tool and Accessibility Insights for Web (accessScan).</p>
+            </section>
+
+            <section aria-labelledby="accessibility-non-accessible">
+                <h2 id="accessibility-non-accessible">Not Fully Accessible Content</h2>
+                <p>Despite our efforts, the following areas may have limitations:</p>
+                <ul>
+                    <li><strong>CSS Art (page `css-art.html`):</strong> The CSS artwork ("Creepy Monkey Face") is primarily visual. Although an `aria-label` is provided for the container describing the image, the complex visual representation cannot be fully conveyed in text form without losing the artistic aspect of the CSS demonstration. According to the assignment, this page is explicitly not required to be responsive, and its accessibility regarding the art itself is inherently limited.</li>
+                    <li><strong>Color Contrasts in Specific Theme Combinations:</strong> Although a high-contrast theme is offered, some elements in the standard themes (Light/Dark) might exist whose contrast ratio narrowly falls short of AA requirements. This is continuously monitored.</li>
+                    <li><strong>External Content:</strong> For content embedded from third parties (e.g., Google Fonts, Font Awesome CDN), complete assurance of their accessibility cannot be guaranteed, although these providers generally adhere to high standards themselves.</li>
+                </ul>
+            </section>
+            
+            <section aria-labelledby="accessibility-feedback">
+                <h2 id="accessibility-feedback">Feedback and Contact Information</h2>
+                <p>We are committed to continuously improving the accessibility of this website. If you notice any deficiencies regarding accessible design or if you require information about non-accessible content, please contact us:</p>
+                <address>
+					for </b>inquiries<b> create a ticket <a href="https://discord.com/invite/XG5J2Nt89A"> here </a>
+                </address>
+            </section>
+
+            <section aria-labelledby="accessibility-enforcement">
+                <h2 id="accessibility-enforcement">Enforcement Procedure / Conciliation Procedure (for public bodies in Germany)</h2>
+                <p>If you believe that you are disadvantaged by an insufficiently accessible design of this website, and your feedback to the above contact has not led to a satisfactory solution, you can contact the competent conciliation body. For federal public bodies, this is the conciliation body according to § 16 BGG at the Federal Government Commissioner for Matters relating to Persons with Disabilities.</p>
+                <p>Further information can be found at: <a href="https://www.schlichtungsstelle-bgg.de" target="_blank" rel="noopener noreferrer">www.schlichtungsstelle-bgg.de</a>.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="page-footer" role="contentinfo">
+        <div class="footer-content footer-animate">
+            <p>© <span id="current-year"></span> Boboh's Portfolio. All rights reserved.</p>
+            <nav class="footer-navigation" aria-label="Footer Navigation">
+                <ul>
+                    <li><a href="impressum.html" class="active-footer-nav">Legal Notice</a></li>
+                    <li><a href="datenschutz.html">Privacy Policy</a></li>
+                    <li><a href="barrierefreiheit.html">Accessibility</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <script> /* Standard JS */ document.addEventListener('DOMContentLoaded', () => { const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)'); const themeToggleButton = document.getElementById('theme-toggle-button'); const htmlEl = document.documentElement; const themes = ['dark-mode', 'light-mode', 'high-contrast-mode']; const icons = ['dark-icon', 'light-icon', 'contrast-icon']; let currentThemeIndex = themes.indexOf( htmlEl.classList.contains('dark-mode') ? 'dark-mode' : htmlEl.classList.contains('light-mode') ? 'light-mode' : 'high-contrast-mode'); if (currentThemeIndex === -1) { currentThemeIndex = 1; htmlEl.classList.add(themes[currentThemeIndex]); } function applyTheme(themeIndex, isInitialLoad = false) { const previousThemeClass = themes[currentThemeIndex]; if (previousThemeClass !== themes[themeIndex]) { htmlEl.classList.remove(previousThemeClass); htmlEl.classList.add(themes[themeIndex]); } currentThemeIndex = themeIndex; const nextThemeIconToShow = icons[(currentThemeIndex + 1) % themes.length]; document.querySelectorAll('.theme-icon').forEach(iconEl => { iconEl.classList.toggle('active', iconEl.classList.contains(nextThemeIconToShow)); }); if (!isInitialLoad) { localStorage.setItem('portfolioThemeIndex', themeIndex); } } applyTheme(currentThemeIndex, true); if(themeToggleButton) { themeToggleButton.addEventListener('click', () => { applyTheme((currentThemeIndex + 1) % themes.length, false); }); } const currentYearEl = document.getElementById('current-year'); if (currentYearEl) { currentYearEl.textContent = new Date().getFullYear(); } const footerContent = document.querySelector('.footer-content.footer-animate'); if (footerContent) { if (motionQuery.matches) { footerContent.classList.add('visible-reduced-motion'); } else { setTimeout(() => footerContent.classList.add('visible'), 100); } } }); </script>
+</body>
+</html>

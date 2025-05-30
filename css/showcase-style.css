@@ -204,13 +204,23 @@ html.high-contrast-mode .page-header { border-bottom-color: var(--text-accent); 
     transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
 }
 .page-header .main-navigation ul li a:hover .link-text-wrapper { transform: translateY(-1px); }
+
+/* MODIFICATION START: Align underline animation with index.html */
 .page-header .main-navigation ul li a::before {
-    content: ''; position: absolute; bottom: -2px; left: 0;
-    width: 100%; height: 2px; background-color: var(--text-nav-link-hover);
-    transform: scaleX(0); transform-origin: center;
+    content: '';
+    position: absolute;
+    bottom: 0px; /* CHANGED FROM -2px */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-nav-link-hover);
+    transform: scaleX(0);
+    transform-origin: left; /* Ensure this is 'left' */
     transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1), background-color 0.35s ease;
     z-index: 0;
 }
+/* MODIFICATION END */
+
 .page-header .main-navigation ul li a:hover::before,
 .page-header .main-navigation ul li a:focus-visible::before,
 .page-header .main-navigation ul li a.active-main-nav::before {
@@ -292,8 +302,8 @@ main.gallery-main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
-    max-width: 1800px;
     margin: 0 auto;
+    max-width: 1800px;
 }
 
 .media-item {

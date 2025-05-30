@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-mode">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boboh's Portfolio - 2025</title>
+    <meta name="description" content="Portfolio von Boboh, das Programmier-, UI/UX-Design- und andere Projekte vorstellt.">
+
+    <script>
+        // Anti-Flashbang Script
+        (function() {
+            const themes = ['dark-mode', 'light-mode', 'high-contrast-mode'];
+            let currentThemeClass = document.documentElement.classList.contains('dark-mode') ? 'dark-mode' :
+                                    document.documentElement.classList.contains('high-contrast-mode') ? 'high-contrast-mode' :
+                                    'light-mode'; // Corrected fallback to light-mode
+            try {
+                const savedThemeIndex = localStorage.getItem('portfolioThemeIndex');
+                if (savedThemeIndex !== null) {
+                    const themeIndex = parseInt(savedThemeIndex, 10);
+                    if (themeIndex >= 0 && themeIndex < themes.length) {
+                        currentThemeClass = themes[themeIndex];
+                    }
+                }
+            } catch (e) { /* localStorage not available or error */ }
+            themes.forEach(theme => document.documentElement.classList.remove(theme));
+            document.documentElement.classList.add(currentThemeClass);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Dela+Gothic+One&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <header class="page-header" role="banner">
+        <nav class="main-navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="#about"><span class="link-text-wrapper">ABOUT ME</span></a></li>
+                <li><a href="#projects"><span class="link-text-wrapper">PROJECTS</span></a></li>
+                <li><a href="css-art.html"><span class="link-text-wrapper">CSS ART</span></a></li>
+                <li><a href="favorites-form.html"><span class="link-text-wrapper">FAVORITES FORM</span></a></li>
+            </ul>
+        </nav>
+        <div class="theme-switcher-container">
+            <button id="theme-toggle-button" aria-label="Toggle theme" title="Toggle theme">
+                <span class="icon-wrapper">
+                    <i class="fas fa-sun light-icon theme-icon" aria-hidden="true"></i>
+                    <i class="fas fa-moon dark-icon theme-icon" aria-hidden="true"></i>
+                    <i class="fas fa-adjust contrast-icon theme-icon" aria-hidden="true"></i>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <main role="main">
+        <section id="about" class="about-section" aria-labelledby="about-heading-main">
+            <div class="portfolio-header">
+                <p class="portfolio-title-text animate-on-load">BOBOH'S PORTFOLIO (2025)</p>
+            </div>
+            <h1 id="about-heading-main" class="about-heading animate-on-load">ABOUT ME</h1>
+            <p class="about-subtitle animate-on-load">Programmer, 3D-Artist, UI/UX Designer</p>
+            <p class="about-text animate-on-load">Hello, i'm <span class="highlight">J.Do aka. BOBOH</span>. My experties lie in CAD modelling & texturing, programming, VFX and UI/UX design.</p>
+            <p class="about-text animate-on-load">Im one of the two developers for <span class="highlight">REVOLT: Civil Unrest</span>, successor to <span class="highlight">Misc Gun Text: X.</span></p>
+            <p class="about-text animate-on-load">Below is a collection of Revolt-Assets. <span class="commission-status">Im currently not taking commissions.</span></p>
+            <a href="#projects" class="cta-button animate-on-load">CURRENT PROJECTS ↓</a>
+        </section>
+
+        <section id="projects" class="projects-section" aria-labelledby="projects-heading">
+            <div class="section-container">
+
+                <div class="extended-stats-container project-stats-variant animate-project-stats">
+                    <div class="stat-item animate-project-stats">
+                        <span class="stat-number">+25M</span>
+                        <span class="stat-description">Contributed Plays Across Platforms</span>
+                    </div>
+                    <div class="stat-item animate-project-stats">
+                        <span class="stat-number">+45M</span>
+                        <span class="stat-description">Social Media Interactions including collabs</span>
+                    </div>
+                </div>
+
+                <h2 id="projects-heading" class="section-title-animate">Current Projects</h2>
+
+                <div class="project-category-filter" role="tablist" aria-labelledby="projects-heading">
+                    <button class="category-button active" type="button" role="tab" aria-selected="true" aria-controls="programming-projects" data-category="programming" id="category-programming" tabindex="0">
+                        <i class="fas fa-code category-icon" aria-hidden="true"></i> Programming
+                    </button>
+                    <button class="category-button" type="button" role="tab" aria-selected="false" aria-controls="uiux-projects" data-category="uiux" id="category-uiux" tabindex="-1">
+                        <i class="fas fa-palette category-icon" aria-hidden="true"></i> UI/UX Design
+                    </button>
+                    <button class="category-button" type="button" role="tab" aria-selected="false" aria-controls="3dart-projects" data-category="3dart" id="category-3dart" tabindex="-1">
+                        <i class="fas fa-cube category-icon" aria-hidden="true"></i> 3D Art
+                    </button>
+                    <button class="category-button" type="button" role="tab" aria-selected="false" aria-controls="all-projects" data-category="all" id="category-all" tabindex="-1">
+                        <i class="fas fa-layer-group category-icon" aria-hidden="true"></i> All Assets
+                    </button>
+                </div>
+
+                <div id="project-grid-container" class="project-grid" role="region" aria-live="polite" aria-atomic="true">
+                    <article class="project-item project-animate" data-category="programming" id="programming-projects" role="tabpanel" aria-labelledby="category-programming">
+                        <figure>
+                            <a href="showcases/programming.html">
+                                <img src="img/revolt_renders/Render2.png" alt="A geeker holding a federal agent at gunpoint.">
+                            </a>
+                            <figcaption>Depicted: Conceptual thumbnail for the game Revolt: Civil Unrest </figcaption>
+                        </figure>
+                        <h3>Gameplay Systems</h3>
+                        <p>Various systems written for the game Revolt: Civil Unrest.</p>
+                    </article>
+					
+                    <article class="project-item project-animate" data-category="uiux" id="uiux-projects" role="tabpanel" aria-labelledby="category-uiux">
+                        <figure>
+                            <a href="showcases/ui_design.html">
+                                <video src="img/UI/RevoltIntro.mp4" autoplay muted loop playsinline style="width:100%; height:auto;">
+								        Your browser does not support the video tag.
+								</video>
+                            </a>
+                            <figcaption>Depicted: Game intro for Revolt: Civil Unrest</figcaption>
+                        </figure>
+                        <h3>Game UI</h3>
+                        <p>Collection of various UI for the game Revolt: Civil Unrest.</p>
+                    </article>
+
+                    <article class="project-item project-animate" data-category="3dart" id="3dart-projects" role="tabpanel" aria-labelledby="category-3dart">
+                        <figure>
+                            <a href="showcases/3D_art.html">
+                                <img src="img/3D_Art/epicos.png" alt="3D rendering of a G19 Gen 5.">
+                            </a>
+                            <figcaption>Depicted: G19 Gen 5 MOS</figcaption>
+                        </figure>
+                        <h3>3D-models and environemntal design</h3>
+                        <p>Kollektion of 3D related assets made for the game Revolt: Civil Unrest</p>
+                    </article>
+   
+                </div>
+                <p id="project-filter-status" class="sr-only" aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer" role="contentinfo">
+        <div class="footer-content footer-animate">
+            <p>© <span id="current-year"></span> Boboh's Portfolio. Alle rights reserved.</p>
+            <nav class="footer-navigation" aria-label="Footer navigation">
+                <ul>
+                    <li><a href="impressum.html" class="active-footer-nav">Legal Notice</a></li>
+                    <li><a href="datenschutz.html">Privacy Policy</a></li>
+                    <li><a href="barrierefreiheit.html">Accessibility</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+<script>
+// START OF MODIFICATIONS: animateCounter function
+function animateCounter(element, targetValue, suffix, duration, isReducedMotion) {
+    // Ensure dataset.originalValue is available, fallback to textContent if called unexpectedly early
+    const originalText = element.dataset.originalValue || element.textContent;
+    const plusSignMatch = originalText.match(/^(\+)/); // Check if original started with +
+    const plusSign = plusSignMatch ? plusSignMatch[1] : "";
+    const displaySuffix = suffix ? suffix.toUpperCase() : ""; // Ensure suffix is uppercase for display
+
+    if (isReducedMotion) {
+        element.textContent = `${plusSign}${targetValue}${displaySuffix}`;
+        return;
+    }
+
+    const startTime = performance.now();
+    // Set initial display text for animation start, respecting original plus sign
+    element.textContent = `${plusSign}0${displaySuffix}`;
+
+    function updateCounterFrame(currentTime) {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1); // Ensure progress doesn't exceed 1
+        const currentValue = Math.floor(progress * targetValue);
+
+        element.textContent = `${plusSign}${currentValue}${displaySuffix}`;
+
+        if (progress < 1) {
+            requestAnimationFrame(updateCounterFrame);
+        } else {
+            // Ensure final value is exact and correctly formatted
+            element.textContent = `${plusSign}${targetValue}${displaySuffix}`;
+        }
+    }
+    requestAnimationFrame(updateCounterFrame);
+}
+// END OF MODIFICATIONS: animateCounter function
+
+document.addEventListener('DOMContentLoaded', () => {
+    const headerEl = document.querySelector('.page-header');
+    const headerOffset = headerEl ? headerEl.offsetHeight : 0;
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function replayAboutAnimations() {
+        const aboutElementsToAnimate = document.querySelectorAll('#about .animate-on-load');
+        aboutElementsToAnimate.forEach((el, index) => {
+            el.classList.remove('fadeInUp-active');
+            void el.offsetHeight;
+            el.style.animationDelay = `${0.1 + index * 0.08}s`;
+            el.classList.add('fadeInUp-active');
+        });
+    }
+
+    document.querySelectorAll('.page-header .main-navigation a[href^="#"], .cta-button[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            try {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    let topPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: topPosition, behavior: motionQuery.matches ? 'auto' : 'smooth' });
+                    if (targetId === '#about' && !motionQuery.matches) {
+                       setTimeout(replayAboutAnimations, 50);
+                    }
+                }
+            } catch (error) { console.warn(`Smooth scroll target not found for: ${targetId}`); }
+        });
+    });
+
+    const currentYearEl = document.getElementById('current-year');
+    if (currentYearEl) {
+        currentYearEl.textContent = new Date().getFullYear();
+    }
+
+    const themeToggleButton = document.getElementById('theme-toggle-button');
+    const htmlEl = document.documentElement;
+    const themes = ['dark-mode', 'light-mode', 'high-contrast-mode'];
+    const icons = ['dark-icon', 'light-icon', 'contrast-icon'];
+
+    let currentThemeIndex = themes.indexOf(htmlEl.classList.contains('dark-mode') ? 'dark-mode' :
+                                  htmlEl.classList.contains('light-mode') ? 'light-mode' :
+                                  'high-contrast-mode');
+    if (currentThemeIndex === -1) { // Fallback if no theme class found initially
+        currentThemeIndex = 0; // Default to dark-mode
+        if(!htmlEl.classList.contains(themes[currentThemeIndex])) {
+            htmlEl.classList.add(themes[currentThemeIndex]);
+        }
+    }
+
+    function applyTheme(themeIndex, isInitialLoad = false) {
+        const previousTheme = themes[currentThemeIndex]; // currentThemeIndex holds the theme *before* this change
+        const newTheme = themes[themeIndex];
+
+        if (previousTheme !== newTheme || isInitialLoad) {
+            htmlEl.classList.remove(...themes); // Remove all possible theme classes
+            htmlEl.classList.add(newTheme);     // Add the new one
+        }
+        currentThemeIndex = themeIndex; // Update currentThemeIndex to the new theme
+
+        const nextThemeIconToShow = icons[(currentThemeIndex + 1) % themes.length];
+        document.querySelectorAll('.theme-icon').forEach(iconEl => {
+            iconEl.classList.toggle('active', iconEl.classList.contains(nextThemeIconToShow));
+        });
+
+        if (!isInitialLoad) {
+            localStorage.setItem('portfolioThemeIndex', themeIndex);
+        }
+    }
+    applyTheme(currentThemeIndex, true);
+
+
+    if(themeToggleButton) {
+        themeToggleButton.addEventListener('click', () => {
+            let nextThemeIndex = (currentThemeIndex + 1) % themes.length;
+            applyTheme(nextThemeIndex);
+        });
+    }
+
+    let scrollObserver; // For Projekt-Items
+    let commonElementsObserver; // New observer for Stats, Titel, Footer
+
+    const allProjectItems = Array.from(document.querySelectorAll('#project-grid-container .project-item'));
+
+    function handleIntersection(entries, observerInstance) { // For Projekt-Items
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                if (motionQuery.matches) {
+                     el.classList.add('visible-reduced-motion');
+                } else {
+                    const style = getComputedStyle(el);
+                    const itemIndexForDelay = style.getPropertyValue('--item-index');
+                    let delay;
+
+                    if (itemIndexForDelay && !isNaN(parseInt(itemIndexForDelay))) {
+                        delay = parseInt(itemIndexForDelay) * 120;
+                    } else {
+                        delay = el.dataset.originalIndex ?
+                                  parseInt(el.dataset.originalIndex) * 120 : 0;
+                    }
+
+                    el.classList.remove('visible', 'fadeInUp-active'); 
+                    void el.offsetHeight;
+                    
+                    setTimeout(() => {
+                         el.classList.add('fadeInUp-active');
+                    }, delay);
+                }
+                observerInstance.unobserve(el);
+            }
+        });
+    }
+    function initializeScrollObserver(itemsToObserve) { // For Projekt-Items
+        if (scrollObserver) { scrollObserver.disconnect(); }
+        if (itemsToObserve.length > 0) {
+            scrollObserver = new IntersectionObserver(handleIntersection, { threshold: 0.1 });
+            itemsToObserve.forEach(el => { scrollObserver.observe(el); });
+        }
+    }
+    allProjectItems.forEach((item, index) => { item.dataset.originalIndex = index; });
+
+
+    function setupInitialAnimations() {
+        const aboutElementsToAnimate = document.querySelectorAll('#about .animate-on-load');
+        aboutElementsToAnimate.forEach((el, index) => {
+            if (motionQuery.matches) {
+                el.classList.add('visible-reduced-motion');
+            } else {
+                el.style.animationDelay = `${0.1 + index * 0.08}s`;
+                el.classList.add('fadeInUp-active');
+            }
+        });
+
+        initializeScrollObserver(allProjectItems.filter(item => getComputedStyle(item).display !== 'none' && !item.hidden));
+
+        const commonElementsToAnimate = document.querySelectorAll('.animate-project-stats, .section-title-animate, .footer-animate');
+        if (commonElementsToAnimate.length > 0) {
+            if (commonElementsObserver) commonElementsObserver.disconnect();
+            
+            // START OF MODIFICATIONS: commonElementsObserver logic
+            commonElementsObserver = new IntersectionObserver((entries, observer) => {
+                let visibleStatsCounter = 0; 
+
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+
+                        if (motionQuery.matches) {
+                            el.classList.add('visible-reduced-motion');
+                            if (el.classList.contains('stat-item')) {
+                                const statNumberEl = el.querySelector('.stat-number');
+                                if (statNumberEl) {
+                                    if (!statNumberEl.dataset.originalValue) {
+                                        statNumberEl.dataset.originalValue = statNumberEl.textContent;
+                                    }
+                                    const originalText = statNumberEl.dataset.originalValue;
+                                    const match = originalText.match(/(\+?)(\d+)([MKkm]?)/);
+                                    if (match) {
+                                        const plusSign = match[1] || "";
+                                        const numberVal = match[2];
+                                        const suffix = match[3] ? match[3].toUpperCase() : "";
+                                        statNumberEl.textContent = `${plusSign}${numberVal}${suffix}`;
+                                    } else {
+                                        statNumberEl.textContent = originalText; 
+                                    }
+                                }
+                            }
+                        } else { 
+                            if (el.classList.contains('animate-project-stats')) {
+                                if (el.classList.contains('stat-item')) {
+                                    el.style.animationDelay = `${0.1 + visibleStatsCounter * 0.12}s`;
+                                    visibleStatsCounter++;
+
+                                    const statNumberEl = el.querySelector('.stat-number');
+                                    if (statNumberEl) {
+                                        if (!statNumberEl.dataset.originalValue) {
+                                            statNumberEl.dataset.originalValue = statNumberEl.textContent;
+                                        }
+                                        const originalText = statNumberEl.dataset.originalValue;
+                                        const match = originalText.match(/(\+?)(\d+)([MKkm]?)/);
+
+                                        if (match) {
+                                            const targetValue = parseInt(match[2], 10);
+                                            const suffix = match[3] || "";
+                                            
+                                            const itemFadeInDelayMs = parseFloat(el.style.animationDelay || '0s') * 1000;
+                                            setTimeout(() => {
+                                                animateCounter(statNumberEl, targetValue, suffix, 1500, false); 
+                                            }, itemFadeInDelayMs + 200); 
+                                        }
+                                    }
+                                } else { 
+                                    el.style.animationDelay = `0s`;
+                                }
+                            } else if (el.classList.contains('section-title-animate')) {
+                                 el.style.animationDelay = `0.2s`; 
+                            } else if (el.classList.contains('footer-animate')) {
+                                 el.style.animationDelay = `0.1s`;
+                            }
+                            el.classList.add('fadeInUp-active');
+                        }
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.1 });
+            // END OF MODIFICATIONS: commonElementsObserver logic
+            commonElementsToAnimate.forEach(el => commonElementsObserver.observe(el));
+        }
+    }
+
+    const filterContainer = document.querySelector('.project-category-filter');
+    const filterButtons = filterContainer ? Array.from(filterContainer.querySelectorAll('.category-button')) : [];
+    const filterStatusEl = document.getElementById('project-filter-status');
+    let visibleItemIndex = 0;
+
+    function filterProjects(selectedCategory) {
+        visibleItemIndex = 0;
+        let visibleCount = 0;
+        const itemsToReobserve = [];
+
+        allProjectItems.forEach(item => {
+            const itemCategory = item.dataset.category;
+            const matchesCategory = selectedCategory === 'all' || itemCategory === selectedCategory;
+
+            item.classList.remove('fadeInUp-active', 'visible-reduced-motion'); 
+            item.style.animationDelay = ''; 
+
+            if (matchesCategory) {
+                item.hidden = false;
+                item.classList.remove('project-item-hidden');
+                item.style.setProperty('--item-index', visibleItemIndex++);
+                itemsToReobserve.push(item);
+                visibleCount++;
+            } else {
+                item.hidden = true;
+                item.classList.add('project-item-hidden');
+            }
+        });
+
+        initializeScrollObserver(itemsToReobserve);
+
+        if (filterStatusEl) {
+            const categoryName = filterButtons.find(btn => btn.dataset.category === selectedCategory)?.textContent.trim() || 'ausgewählten';
+            filterStatusEl.textContent = `${visibleCount} Projekt(e) für die Kategorie ${categoryName} angezeigt.`;
+        }
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+                btn.setAttribute('tabindex', '-1');
+            });
+            button.classList.add('active');
+            button.setAttribute('aria-selected', 'true');
+            button.setAttribute('tabindex', '0');
+            filterProjects(button.dataset.category);
+        });
+
+        button.addEventListener('keydown', (e) => { 
+            let currentIndex = filterButtons.indexOf(e.target);
+            let nextIndex = -1;
+
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                nextIndex = (currentIndex + 1) % filterButtons.length;
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                nextIndex = (currentIndex - 1 + filterButtons.length) % filterButtons.length;
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                nextIndex = 0;
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                nextIndex = filterButtons.length - 1;
+            }
+            
+            if (nextIndex !== -1) {
+                filterButtons[nextIndex].focus();
+                // Optional: click to activate on focus change via arrow keys
+                // filterButtons[nextIndex].click(); 
+            }
+        });
+    });
+    
+    // START OF MODIFICATIONS: motionQuery listener
+    motionQuery.addEventListener('change', (e) => {
+        const isReduced = e.matches;
+        document.querySelectorAll('.animate-on-load, .animate-project-stats, .section-title-animate, .footer-animate, .project-item.project-animate').forEach(el => {
+            el.classList.remove('fadeInUp-active', 'visible-reduced-motion');
+            el.style.animationDelay = ''; 
+
+            if (isReduced) {
+                el.classList.add('visible-reduced-motion');
+                if (el.classList.contains('stat-item')) {
+                    const statNumberEl = el.querySelector('.stat-number');
+                    if (statNumberEl) {
+                        if (!statNumberEl.dataset.originalValue) {
+                            statNumberEl.dataset.originalValue = statNumberEl.textContent;
+                        }
+                         const originalText = statNumberEl.dataset.originalValue;
+                         const match = originalText.match(/(\+?)(\d+)([MKkm]?)/);
+                         if (match) {
+                            const plusSign = match[1] || "";
+                            const numberVal = match[2];
+                            const suffix = match[3] ? match[3].toUpperCase() : "";
+                            statNumberEl.textContent = `${plusSign}${numberVal}${suffix}`;
+                         } else {
+                            statNumberEl.textContent = originalText;
+                         }
+                    }
+                }
+            }
+        });
+
+        if (!isReduced) {
+            setupInitialAnimations();
+        }
+
+        const currentFilter = filterContainer ? filterContainer.querySelector('.category-button.active')?.dataset.category || 'all' : 'all';
+        filterProjects(currentFilter);
+    });
+    // END OF MODIFICATIONS: motionQuery listener
+
+    setupInitialAnimations();
+    const initiallyActiveButton = filterContainer ? filterContainer.querySelector('.category-button.active') : null;
+    if (initiallyActiveButton) { filterProjects(initiallyActiveButton.dataset.category); }
+    else if (filterButtons.length > 0 && filterButtons[0]) { 
+        // This part can be uncommented if you want to ensure the first button is always active by default
+        // filterButtons[0].classList.add('active');
+        // filterButtons[0].setAttribute('aria-selected', 'true');
+        // filterButtons[0].setAttribute('tabindex', '0');
+        // filterProjects(filterButtons[0].dataset.category);
+    }
+});
+</script>
+</body>
+</html>
