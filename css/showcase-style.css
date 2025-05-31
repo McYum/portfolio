@@ -15,9 +15,9 @@ body {
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
     font-size: 16px;
-    padding-top: 70px; /* Muss zur Header-Höhe passen */
-    background-color: var(--bg-page-content); /* THEMENBASIERT */
-    color: var(--text-primary); /* THEMENBASIERT */
+    padding-top: 70px; /* Must match header height */
+    background-color: var(--bg-page-content); /* THEME-BASED */
+    color: var(--text-primary); /* THEME-BASED */
     transition: color 0.4s ease, background-color 0.4s ease;
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--bg-overlay-main); /* THEMENBASIERT */
+    background-color: var(--bg-overlay-main); /* THEME-BASED */
     z-index: -2;
     transition: background-color 0.4s ease;
 }
@@ -183,11 +183,11 @@ html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
 }
 html.high-contrast-mode .page-header { border-bottom-color: var(--text-accent); }
 
-/* Navigations-Listenelemente und Theme-Switcher sind standardmäßig sichtbar */
+/* Navigation list items and theme switcher are visible by default */
 .page-header .main-navigation ul li,
 .page-header .theme-switcher-container {
-    opacity: 1; /* Sofort sichtbar */
-    transform: none; /* An ihrer normalen Position */
+    opacity: 1; /* Immediately visible */
+    transform: none; /* In their normal position */
 }
 
 .page-header .main-navigation ul {
@@ -340,7 +340,7 @@ main.gallery-main {
     opacity: 0;
     transform: translateY(20px);
     transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease,
-                opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s;
+    opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s;
 }
 html.high-contrast-mode .page-footer { border-top-color: var(--text-accent); }
 
@@ -452,36 +452,36 @@ html.high-contrast-mode .lightbox-control:focus-visible:not(:disabled) { backgro
 
 /* --- PREFERS REDUCED MOTION --- */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01s !important;
-    transition-delay: 0s !important;
-  }
+    *, *::before, *::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01s !important;
+        transition-delay: 0s !important;
+    }
 
-  .gallery-title,
-  .media-item,
-  .page-footer {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  .page-header .main-navigation ul li a:hover .link-text-wrapper { transform: none !important; }
-  #theme-toggle-button:hover,
-  #theme-toggle-button:focus-visible {
-    transform: none !important;
-    box-shadow: 0 0 8px 2px var(--border-theme-button-hover);
-  }
+    .gallery-title,
+    .media-item,
+    .page-footer {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .page-header .main-navigation ul li a:hover .link-text-wrapper { transform: none !important; }
+    #theme-toggle-button:hover,
+    #theme-toggle-button:focus-visible {
+        transform: none !important;
+        box-shadow: 0 0 8px 2px var(--border-theme-button-hover);
+    }
 
-  .lightbox-overlay.active .lightbox-content-wrapper {
-    transform: scale(1) !important; opacity: 1 !important;
-  }
-  #lightboxImage { opacity: 1 !important; }
+    .lightbox-overlay.active .lightbox-content-wrapper {
+        transform: scale(1) !important; opacity: 1 !important;
+    }
+    #lightboxImage { opacity: 1 !important; }
 
-  .media-item a.lightbox-trigger:hover img,
-  .media-item a.lightbox-trigger:focus-visible img {
-    transform: none !important; filter: none !important;
-  }
+    .media-item a.lightbox-trigger:hover img,
+    .media-item a.lightbox-trigger:focus-visible img {
+        transform: none !important; filter: none !important;
+    }
 }

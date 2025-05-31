@@ -524,13 +524,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setupInitialAnimations();
     const initiallyActiveButton = filterContainer ? filterContainer.querySelector('.category-button.active') : null;
     if (initiallyActiveButton) { filterProjects(initiallyActiveButton.dataset.category); }
-    else if (filterButtons.length > 0 && filterButtons[0]) { 
-        // This part can be uncommented if you want to ensure the first button is always active by default
-        // filterButtons[0].classList.add('active');
-        // filterButtons[0].setAttribute('aria-selected', 'true');
-        // filterButtons[0].setAttribute('tabindex', '0');
-        // filterProjects(filterButtons[0].dataset.category);
-    }
 });
 </script>
 </body>

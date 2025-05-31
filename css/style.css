@@ -56,9 +56,9 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 [tabindex]:not([tabindex="-1"]):focus-visible {
-    outline: 3px solid var(--focus-outline-color, Highlight); 
+    outline: 3px solid var(--focus-outline-color, Highlight);
     outline-offset: 2px;
-    box-shadow: 0 0 0 4px var(--focus-shadow-color, rgba(0,100,255,0.3)); 
+    box-shadow: 0 0 0 4px var(--focus-shadow-color, rgba(0,100,255,0.3));
 }
 html.high-contrast-mode a:focus-visible,
 html.high-contrast-mode button:focus-visible,
@@ -66,13 +66,12 @@ html.high-contrast-mode input:focus-visible,
 html.high-contrast-mode select:focus-visible,
 html.high-contrast-mode textarea:focus-visible,
 html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
-    outline: 3px solid var(--text-accent); 
+    outline: 3px solid var(--text-accent);
     outline-offset: 2px;
-    box-shadow: none; 
+    box-shadow: none;
 }
 
 /* --- About Section Content Wrapper --- */
-/* .about-content-wrapper REGEL ENTFERNT */
 
 
 /* About Section Styles */
@@ -94,19 +93,16 @@ html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
     min-height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
-    align-items: flex-start; 
+    justify-content: flex-start;
+    align-items: flex-start;
     text-align: left;
-    padding-left: 6vw; /* Ursprüngliches Padding */
+    padding-left: 6vw;
     padding-right: 6vw;
-    padding-top: 11vh; 
+    padding-top: 11vh;
     padding-bottom: 45px;
     position: relative;
     z-index: 1;
-    /* Begrenzung der maximalen Breite für bessere Lesbarkeit des Textes */
-    max-width: 1400px; /* Oder einen anderen Wert, der Ihnen passt */
-    /* margin-left: auto; /* Um die Section nach links zu schieben, wenn max-width aktiv ist */
-    /* margin-right: auto; /* Zentriert, wenn Sie das bevorzugen */
+    max-width: 1400px;
 }
 
 .about-heading.animate-on-load {
@@ -202,7 +198,7 @@ html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
     .cta-button.animate-on-load { font-size: 0.825em; padding: 12px 37.5px; margin-top: 33.75px; border-width: 1.875px;}
 }
 @media (max-width: 768px) {
-    .about-section { padding-top: 9vh; padding-left: 4vw; padding-right: 4vw; max-width: none; /* Volle Breite auf kleineren Screens */}
+    .about-section { padding-top: 9vh; padding-left: 4vw; padding-right: 4vw; max-width: none; /* Full width on smaller screens */}
     .portfolio-title-text.animate-on-load { font-size: 0.6em; letter-spacing: 3.75px; margin-bottom: 22.5px; }
     .about-heading.animate-on-load { font-size: 2.25em; margin-bottom: 13.5px; }
     .about-subtitle.animate-on-load, .about-text.animate-on-load { font-size: 0.75em; letter-spacing: 0.75px; line-height: 1.8; }
@@ -210,7 +206,7 @@ html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
     .cta-button.animate-on-load { font-size: 0.75em; padding: 10.5px 33.75px; margin-top: 30px; border-width: 1.875px; }
 }
 @media (max-width: 480px) {
-     .about-section { padding-top: 8vh; padding-left: 3vw; padding-right: 3vw;}
+    .about-section { padding-top: 8vh; padding-left: 3vw; padding-right: 3vw;}
     .portfolio-title-text.animate-on-load { font-size: 0.7em; letter-spacing: 5px; margin-bottom: 25px; }
     .about-heading.animate-on-load { font-size: 2.8em; margin-bottom: 15px; }
     .about-subtitle.animate-on-load, .about-text.animate-on-load { font-size: 0.75em; line-height: 2; letter-spacing: 1px; }
@@ -222,16 +218,16 @@ html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
     --bg-overlay-main: rgba(8, 8, 18, 0.65);
     --bg-primary-content: #0f0f1a;
     --bg-secondary-content: rgba(22, 22, 38, 0.9);
-    --bg-tertiary-content: rgba(30, 30, 55, 0.8); 
+    --bg-tertiary-content: rgba(30, 30, 55, 0.8);
     --bg-header: rgba(12, 12, 22, 0.65);
     --bg-footer: #040408;
 
     --text-primary: #d5d8de;
     --text-secondary: #b0b8c5;
-    --text-accent: #ffffff; 
+    --text-accent: #ffffff;
     --text-about-main: #e0e0e0;
-    --text-card-primary: #d5d8de; 
-    --text-card-secondary: #b0b8c5; 
+    --text-card-primary: #d5d8de;
+    --text-card-secondary: #b0b8c5;
 
     --text-link-nav: #c0c8d0;
     --text-link-nav-hover: #ffffff;
@@ -253,57 +249,57 @@ html.high-contrast-mode [tabindex]:not([tabindex="-1"]):focus-visible {
     --highlight-color: #f0f0f0;
     --commission-status-color: #aaffaa;
 
-    --focus-outline-color: #d5d8de; 
-    --focus-shadow-color: rgba(213, 216, 222, 0.3); 
+    --focus-outline-color: #d5d8de;
+    --focus-shadow-color: rgba(213, 216, 222, 0.3);
 
     --theme-transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, opacity 0.35s ease;
 }
 
 html.light-mode {
-    --bg-overlay-main: rgba(8, 8, 18, 0.65); 
-    --bg-primary-content: #ffffff; 
-    --bg-secondary-content: #f8f9fa; 
-    --bg-tertiary-content: #e9ecef; 
-    --bg-header: rgba(240, 242, 248, 0.85); 
+    --bg-overlay-main: rgba(8, 8, 18, 0.65);
+    --bg-primary-content: #ffffff;
+    --bg-secondary-content: #f8f9fa;
+    --bg-tertiary-content: #e9ecef;
+    --bg-header: rgba(240, 242, 248, 0.85);
     --bg-footer: #e4e9ef;
 
-    /* Textfarben für Elemente direkt auf dem dunklen Overlay (z.B. About Section) */
+    /* Text colors for elements directly on the dark overlay (e.g., About Section) */
     --text-primary: #d5d8de;
     --text-secondary: #b0b8c5;
-    --text-accent: #ffffff; 
+    --text-accent: #ffffff;
     --text-about-main: #e0e0e0;
     --highlight-color: #f0f0f0;
     --commission-status-color: #aaffaa;
-    --focus-outline-color:  #d5d8de; 
+    --focus-outline-color:  #d5d8de;
     --focus-shadow-color: rgba(213, 216, 222, 0.3);
 
-    /* Textfarben und Akzente für helle UI-Komponenten (Header, Karten, Footer, Projektbereich) */
+    /* Text colors and accents for light UI components (Header, Cards, Footer, Project Area) */
     --text-on-light-bg: #212529;
     --text-secondary-on-light-bg: #495057;
-    --accent-on-light-bg: #0056b3; 
+    --accent-on-light-bg: #0056b3;
     --link-on-light-bg: #0056b3;
     --link-hover-on-light-bg: #003875;
-    --focus-outline-on-light-bg: #0056b3; 
+    --focus-outline-on-light-bg: #0056b3;
     --focus-shadow-on-light-bg: rgba(0, 86, 179, 0.3);
-    --border-secondary-on-light-bg: #d1d9e0; 
+    --border-secondary-on-light-bg: #d1d9e0;
     --border-theme-button-on-light-bg: #505868;
     --border-theme-button-hover-on-light-bg: #000000;
 
     --text-card-primary: var(--text-on-light-bg);
     --text-card-secondary: var(--text-secondary-on-light-bg);
-    --border-project-item-hover: #6c757d; 
+    --border-project-item-hover: #6c757d;
 
 
-    --text-button-cta: var(--text-primary); 
+    --text-button-cta: var(--text-primary);
     --bg-button-cta: transparent;
-    --border-button-cta: var(--text-primary); 
-    --text-button-cta-hover: var(--text-on-light-bg); 
-    --bg-button-cta-hover: var(--text-primary); 
+    --border-button-cta: var(--text-primary);
+    --text-button-cta-hover: var(--text-on-light-bg);
+    --bg-button-cta-hover: var(--text-primary);
     --border-button-cta-hover: var(--text-primary);
 }
 
 html.high-contrast-mode {
-    --bg-overlay-main: rgba(8, 8, 18, 0.65); 
+    --bg-overlay-main: rgba(8, 8, 18, 0.65);
     --bg-primary-content: #000000;
     --bg-secondary-content: #080808;
     --bg-tertiary-content: #030303;
@@ -312,7 +308,7 @@ html.high-contrast-mode {
 
     --text-primary: #ffffff;
     --text-secondary: #f0f0f0;
-    --text-accent: #ffff00; 
+    --text-accent: #ffff00;
     --text-about-main: #ffffff;
     --text-card-primary: #ffffff;
     --text-card-secondary: #f0f0f0;
@@ -335,66 +331,66 @@ html.high-contrast-mode {
     --border-theme-button-hover: var(--text-accent);
 
     --highlight-color: var(--text-accent);
-    --commission-status-color: #00ff00; 
+    --commission-status-color: #00ff00;
 
-    --focus-outline-color: var(--text-accent); 
-    --focus-shadow-color: rgba(255, 255, 0, 0.4); 
+    --focus-outline-color: var(--text-accent);
+    --focus-shadow-color: rgba(255, 255, 0, 0.4);
 }
 
 .overlay, .page-header, .projects-section, .project-item, .page-footer, #theme-toggle-button,
-/* .about-content-wrapper, entfernt */
+    /* .about-content-wrapper, removed */
 .about-section .portfolio-title-text, .about-section .about-heading, .about-section .about-subtitle, .about-section .about-text,
 .about-section .highlight, .about-section .commission-status {
     transition: var(--theme-transition);
 }
 
 /* --- Light Mode Specific Text and Focus Styling --- */
-html.light-mode body { 
-    color: var(--text-primary); /* Default body text (für About Section) ist hell */
+html.light-mode body {
+    color: var(--text-primary); /* Default body text (for About Section) is light */
 }
 
 /* Header in Light Mode */
-html.light-mode .page-header { 
-    color: var(--text-on-light-bg); 
+html.light-mode .page-header {
+    color: var(--text-on-light-bg);
     border-bottom-color: var(--border-secondary-on-light-bg);
 }
 html.light-mode .page-header .main-navigation ul li a { color: var(--link-on-light-bg); }
 html.light-mode .page-header .main-navigation ul li a:hover,
 html.light-mode .page-header .main-navigation ul li a:focus-visible { color: var(--link-hover-on-light-bg); }
 html.light-mode .page-header .main-navigation ul li a::before { background-color: var(--link-hover-on-light-bg); }
-html.light-mode #theme-toggle-button { 
-    color: var(--text-secondary-on-light-bg); 
-    border-color: var(--border-theme-button-on-light-bg); 
+html.light-mode #theme-toggle-button {
+    color: var(--text-secondary-on-light-bg);
+    border-color: var(--border-theme-button-on-light-bg);
 }
 html.light-mode #theme-toggle-button:hover,
-html.light-mode #theme-toggle-button:focus-visible { 
-    color: var(--text-on-light-bg); 
-    border-color: var(--border-theme-button-hover-on-light-bg); 
+html.light-mode #theme-toggle-button:focus-visible {
+    color: var(--text-on-light-bg);
+    border-color: var(--border-theme-button-hover-on-light-bg);
     box-shadow: 0 0 8px 2px var(--border-theme-button-hover-on-light-bg);
 }
-html.light-mode .page-header a:focus-visible, 
-html.light-mode .page-header button:focus-visible { 
+html.light-mode .page-header a:focus-visible,
+html.light-mode .page-header button:focus-visible {
     outline-color: var(--focus-outline-on-light-bg);
     box-shadow: 0 0 0 4px var(--focus-shadow-on-light-bg);
 }
 
-/* Focus für CTA button in about section (direkt auf dunklem Overlay) */
+/* Focus for CTA button in about section (directly on dark overlay) */
 html.light-mode .about-section .cta-button.animate-on-load:focus-visible {
-     outline-color: var(--focus-outline-color); 
-     box-shadow: 0 0 0 4px var(--focus-shadow-color);
+    outline-color: var(--focus-outline-color);
+    box-shadow: 0 0 0 4px var(--focus-shadow-color);
 }
 
 /* Projects Section in Light Mode */
 html.light-mode .projects-section { color: var(--text-on-light-bg); }
 html.light-mode .projects-section h2.section-title-animate { color: var(--accent-on-light-bg); }
-html.light-mode .project-item { 
-    border-color: var(--border-secondary-on-light-bg); 
+html.light-mode .project-item {
+    border-color: var(--border-secondary-on-light-bg);
 }
 html.light-mode .project-item img {
     border-color: rgba(0,0,0,0.05);
 }
 html.light-mode .project-item h3 { color: var(--accent-on-light-bg); }
-html.light-mode .project-item p { color: var(--text-card-primary); } 
+html.light-mode .project-item p { color: var(--text-card-primary); }
 html.light-mode .project-item figcaption { color: var(--text-card-secondary); }
 
 html.light-mode .project-category-filter { }
@@ -402,20 +398,20 @@ html.light-mode .category-button { color: var(--text-secondary-on-light-bg); }
 html.light-mode .category-button:hover { color: var(--accent-on-light-bg); background-color: #d8dfe6; }
 html.light-mode .category-button.active { background-color: var(--accent-on-light-bg); color: #ffffff; }
 html.light-mode .category-button.active .category-icon { color: #ffffff; }
-html.light-mode .projects-section a:focus-visible, 
+html.light-mode .projects-section a:focus-visible,
 html.light-mode .projects-section button:focus-visible {
     outline-color: var(--focus-outline-on-light-bg);
     box-shadow: 0 0 0 4px var(--focus-shadow-on-light-bg);
 }
 
 /* Footer in Light Mode */
-html.light-mode .page-footer { 
-    color: var(--text-secondary-on-light-bg); 
+html.light-mode .page-footer {
+    color: var(--text-secondary-on-light-bg);
     border-top-color: var(--border-secondary-on-light-bg);
 }
-html.light-mode .page-footer .footer-navigation ul li a { color: var(--text-on-light-bg); } 
+html.light-mode .page-footer .footer-navigation ul li a { color: var(--text-on-light-bg); }
 html.light-mode .page-footer .footer-navigation ul li a:hover,
-html.light-mode .page-footer .footer-navigation ul li a:focus-visible { color: #000000; } 
+html.light-mode .page-footer .footer-navigation ul li a:focus-visible { color: #000000; }
 html.light-mode .page-footer a:focus-visible {
     outline-color: var(--focus-outline-on-light-bg);
     box-shadow: 0 0 0 4px var(--focus-shadow-on-light-bg);
@@ -451,7 +447,7 @@ html.high-contrast-mode .page-header { border-bottom-color: var(--text-accent); 
     transform: scaleX(1);
 }
 .page-header .main-navigation ul li a:hover,
-.page-header .main-navigation ul li a:focus-visible { 
+.page-header .main-navigation ul li a:focus-visible {
     color: var(--text-link-nav-hover);
 }
 
@@ -463,7 +459,7 @@ html.high-contrast-mode .page-header { border-bottom-color: var(--text-accent); 
     display: flex; position: relative;
 }
 #theme-toggle-button:hover,
-#theme-toggle-button:focus-visible { 
+#theme-toggle-button:focus-visible {
     color: var(--text-accent); border-color: var(--border-theme-button-hover);
     transform: scale(1.1) rotate(15deg);
     box-shadow: 0 0 8px 2px var(--border-theme-button-hover);
@@ -479,7 +475,7 @@ html.high-contrast-mode .page-header { border-bottom-color: var(--text-accent); 
 }
 .projects-section .section-container { max-width: 1200px; margin: 0 auto; }
 .projects-section h2.section-title-animate {
-    font-family: 'Dela Gothic One', cursive; font-size: 2.6em; color: var(--text-accent); 
+    font-family: 'Dela Gothic One', cursive; font-size: 2.6em; color: var(--text-accent);
     text-align: center; margin-bottom: 50px;
     opacity: 0; transform: translateY(30px) scale(0.95);
     transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), color 0.35s ease;
@@ -492,7 +488,7 @@ html.high-contrast-mode .page-header { border-bottom-color: var(--text-accent); 
     display: flex; flex-direction: column; border: 1px solid var(--border-secondary);
     opacity: 0; transform: translateY(40px) rotateX(-10deg); transform-origin: bottom center;
     transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s ease-out, opacity 0.5s ease-out,
-                background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+    background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
 }
 .project-item.project-animate.visible { opacity: 1; transform: translateY(0) rotateX(0deg); }
 .project-item:hover {
@@ -509,11 +505,11 @@ html.high-contrast-mode .page-header { border-bottom-color: var(--text-accent); 
 }
 .project-item:hover img { transform: scale(1.1); }
 .project-item figcaption { font-size: 0.75em; text-align: center; font-style: italic; color: var(--text-card-secondary); opacity: 0.8; }
-.project-item h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.25em; color: var(--text-accent); margin-bottom: 10px; } 
+.project-item h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.25em; color: var(--text-accent); margin-bottom: 10px; }
 .project-item p { font-family: 'Inter', sans-serif; font-size: 0.95em; line-height: 1.6; flex-grow: 1; color: var(--text-card-primary); }
 
 .page-footer {
-    background-color: var(--bg-footer); 
+    background-color: var(--bg-footer);
     padding: 30px 5vw;
     text-align: center; font-size: 0.8em; margin-top: auto;
     border-top: 1px solid var(--border-secondary);
@@ -526,7 +522,7 @@ html.high-contrast-mode .page-footer { border-top-color: var(--text-accent); }
 .page-footer .footer-navigation ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 20px; }
 .page-footer .footer-navigation ul li a { color: var(--text-link-footer); text-decoration: none; transition: color 0.2s ease; }
 .page-footer .footer-navigation ul li a:hover,
-.page-footer .footer-navigation ul li a:focus-visible { 
+.page-footer .footer-navigation ul li a:focus-visible {
     color: var(--text-link-footer-hover); text-decoration: underline;
 }
 
@@ -551,57 +547,57 @@ html.high-contrast-mode .page-footer { border-top-color: var(--text-accent); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
-  }
+    *,
+    *::before,
+    *::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
 
-  .animate-on-load,
-  .project-animate,
-  .footer-animate,
-  .section-title-animate,
-  .fadeInUp-active {
-    opacity: 1 !important;
-    transform: none !important;
-  }
+    .animate-on-load,
+    .project-animate,
+    .footer-animate,
+    .section-title-animate,
+    .fadeInUp-active {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 
-  .section-title-animate.visible,
-  .project-item.project-animate.visible,
-  .footer-content.footer-animate.visible {
-    opacity: 1 !important;
-    transform: none !important;
-  }
+    .section-title-animate.visible,
+    .project-item.project-animate.visible,
+    .footer-content.footer-animate.visible {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 
-  .page-header .main-navigation ul li a .link-text-wrapper {
-    transform: none !important;
-  }
-  .page-header .main-navigation ul li a::before {
-    transform: scaleX(0) !important; 
-  }
-   .page-header .main-navigation ul li a:hover::before,
-   .page-header .main-navigation ul li a:focus-visible::before {
-       transform: scaleX(1) !important; 
-   }
+    .page-header .main-navigation ul li a .link-text-wrapper {
+        transform: none !important;
+    }
+    .page-header .main-navigation ul li a::before {
+        transform: scaleX(0) !important;
+    }
+    .page-header .main-navigation ul li a:hover::before,
+    .page-header .main-navigation ul li a:focus-visible::before {
+        transform: scaleX(1) !important;
+    }
 
-  #theme-toggle-button:hover,
-  #theme-toggle-button:focus-visible {
-    transform: none !important; 
-    box-shadow: 0 0 8px 2px var(--border-theme-button-hover); 
-  }
+    #theme-toggle-button:hover,
+    #theme-toggle-button:focus-visible {
+        transform: none !important;
+        box-shadow: 0 0 8px 2px var(--border-theme-button-hover);
+    }
 
-  .project-item:hover {
-    transform: none !important;
-  }
-  .project-item:hover img {
-    transform: none !important;
-  }
+    .project-item:hover {
+        transform: none !important;
+    }
+    .project-item:hover img {
+        transform: none !important;
+    }
 }
 
 .visible-reduced-motion {
@@ -617,127 +613,127 @@ html.high-contrast-mode .page-footer { border-top-color: var(--text-accent); }
     justify-content: center;
     align-items: center;
     margin-bottom: 40px;
-    background-color: var(--bg-tertiary-content); 
-    border-radius: 8px; 
-    padding: 5px; 
+    background-color: var(--bg-tertiary-content);
+    border-radius: 8px;
+    padding: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    flex-wrap: wrap; 
-    gap: 5px; 
+    flex-wrap: wrap;
+    gap: 5px;
 }
 
 .category-button {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 0.9em;
-    padding: 10px 20px; 
-    border: none; 
-    background-color: transparent; 
-    color: var(--text-secondary); 
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    color: var(--text-secondary);
     cursor: pointer;
-    border-radius: 6px; 
+    border-radius: 6px;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
     display: flex;
     align-items: center;
-    gap: 8px; 
-    flex-grow: 1; 
-    flex-basis: auto; 
+    gap: 8px;
+    flex-grow: 1;
+    flex-basis: auto;
     text-align: center;
     justify-content: center;
 }
 
 .category-button .category-icon {
-    font-size: 1.1em; 
-    line-height: 1; 
+    font-size: 1.1em;
+    line-height: 1;
 }
 
 .category-button:hover {
-    color: var(--text-accent); 
-    background-color: rgba(255,255,255,0.05); 
+    color: var(--text-accent);
+    background-color: rgba(255,255,255,0.05);
 }
 
 .category-button.active {
-    background-color: var(--text-accent); 
-    color: var(--bg-primary-content); 
+    background-color: var(--text-accent);
+    color: var(--bg-primary-content);
     font-weight: 700;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
-    transform: translateY(-1px); 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
 }
 .category-button.active .category-icon {
-    color: var(--bg-primary-content); 
+    color: var(--bg-primary-content);
 }
 
 html.high-contrast-mode .project-category-filter {
     background-color: #000000;
-    border: 1px solid var(--text-accent); 
+    border: 1px solid var(--text-accent);
 }
 html.high-contrast-mode .category-button {
     color: var(--text-primary);
-    border: 1px solid transparent; 
+    border: 1px solid transparent;
 }
 html.high-contrast-mode .category-button:hover {
     color: var(--text-accent);
-    background-color: #1a1a1a; 
+    background-color: #1a1a1a;
     border-color: var(--text-accent);
 }
 html.high-contrast-mode .category-button.active {
     background-color: var(--text-accent);
-    color: #000000; 
+    color: #000000;
     border-color: var(--text-accent);
     font-weight: bold;
 }
 html.high-contrast-mode .category-button.active .category-icon {
     color: #000000;
 }
-.category-button:focus-visible { 
+.category-button:focus-visible {
     outline: 3px solid var(--focus-outline-color);
-    outline-offset: 1px; 
+    outline-offset: 1px;
 }
 html.high-contrast-mode .category-button:focus-visible {
-    outline-color: var(--text-accent); 
+    outline-color: var(--text-accent);
 }
 
 
 .project-item-hidden {
-    display: none !important; 
+    display: none !important;
 }
 
 @media (max-width: 768px) {
     .project-category-filter {
-        flex-direction: column; 
-        align-items: stretch; 
+        flex-direction: column;
+        align-items: stretch;
     }
     .category-button {
-        flex-grow: 0; 
-        margin-bottom: 5px; 
+        flex-grow: 0;
+        margin-bottom: 5px;
     }
     .category-button:last-child {
         margin-bottom: 0;
     }
 }
 
-/* --- Bestehende Animationsdefinition (sollte schon da sein) --- */
+/* --- Existing animation definition (should already be there) --- */
 @keyframes fadeInUpAnimation {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 .fadeInUp-active {
     animation-name: fadeInUpAnimation;
-    animation-duration: 0.8s; /* Oder deine bevorzugte Dauer */
+    animation-duration: 0.8s; /* Or your preferred duration */
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-/* --- Initialer Zustand für Elemente, die animiert werden sollen --- */
+/* --- Initial state for elements to be animated --- */ /* For project items that get .fadeInUp-active via JS */
 .animate-on-load,
-.project-animate, /* Für Projekt-Items, die per JS .fadeInUp-active bekommen */
-.animate-project-stats, /* Für die neuen Statistik-Elemente */
-.section-title-animate, /* Für die Projektüberschrift */
-.footer-animate { /* Für den Footer */
+.project-animate,
+.animate-project-stats, /* For the new statistics elements */
+.section-title-animate, /* For the project heading */
+.footer-animate { /* For the footer */
     opacity: 0;
-    transform: translateY(20px); /* Einheitlicher Start für fadeInUp */
+    transform: translateY(20px); /* Uniform start for fadeInUp */
 }
 
-/* --- Styles für die Statistik-Container-Variante in der Projekt-Sektion --- */
+/* --- Styles for the statistics container variant in the project section --- */
 .extended-stats-container.project-stats-variant {
     display: flex;
     justify-content: center;
@@ -747,7 +743,7 @@ html.high-contrast-mode .category-button:focus-visible {
     padding: 20px 0;
     width: 100%;
     flex-wrap: wrap;
-    /* opacity und transform werden von .animate-project-stats und .fadeInUp-active gesteuert */
+    /* opacity and transform are controlled by .animate-project-stats and .fadeInUp-active */
 }
 
 .extended-stats-container.project-stats-variant .stat-item {
@@ -755,14 +751,14 @@ html.high-contrast-mode .category-button:focus-visible {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* opacity und transform werden von .animate-project-stats und .fadeInUp-active gesteuert */
+    /* opacity and transform are controlled by .animate-project-stats and .fadeInUp-active */
 }
 
 .extended-stats-container.project-stats-variant .stat-number {
     font-family: 'Dela Gothic One', cursive;
     font-size: 2.8em;
     font-weight: normal;
-    color: var(--text-accent); /* Wird für Light Mode überschrieben */
+    color: var(--text-accent); /* Is overridden for Light Mode */
     line-height: 1.1;
     margin-bottom: 8px;
     letter-spacing: 1px;
@@ -771,13 +767,13 @@ html.high-contrast-mode .category-button:focus-visible {
 .extended-stats-container.project-stats-variant .stat-description {
     font-family: 'Inter', sans-serif;
     font-size: 0.9em;
-    color: var(--text-secondary); /* Wird für Light Mode überschrieben */
+    color: var(--text-secondary); /* Is overridden for Light Mode */
     line-height: 1.4;
     letter-spacing: 0.5px;
     max-width: 180px;
 }
 
-/* Farbliche Anpassung der Stats für die Projekt-Sektion im Light-Mode */
+/* Color adjustment of stats for the project section in Light Mode */
 html.light-mode .extended-stats-container.project-stats-variant .stat-number {
     color: var(--accent-on-light-bg);
 }
@@ -785,7 +781,7 @@ html.light-mode .extended-stats-container.project-stats-variant .stat-descriptio
     color: var(--text-secondary-on-light-bg);
 }
 
-/* High Contrast Mode bleibt konsistent */
+/* High Contrast Mode remains consistent */
 html.high-contrast-mode .extended-stats-container.project-stats-variant .stat-number {
     color: var(--text-accent);
 }
@@ -794,7 +790,7 @@ html.high-contrast-mode .extended-stats-container.project-stats-variant .stat-de
 }
 
 
-/* --- Responsive Anpassungen für die Extended Stats in der Projekt-Sektion --- */
+/* --- Responsive adjustments for the Extended Stats in the project section --- */
 @media (max-width: 768px) {
     .extended-stats-container.project-stats-variant {
         gap: 30px;
@@ -815,7 +811,7 @@ html.high-contrast-mode .extended-stats-container.project-stats-variant .stat-de
         gap: 25px;
         margin-bottom: 25px;
     }
-     .extended-stats-container.project-stats-variant .stat-item {
+    .extended-stats-container.project-stats-variant .stat-item {
         min-width: auto;
         width: 100%;
         max-width: 300px;
@@ -825,13 +821,7 @@ html.high-contrast-mode .extended-stats-container.project-stats-variant .stat-de
     }
 }
 
-/* --- Anpassung für .project-animate (Projekt-Items) --- */
-/* Die Klasse .project-animate dient jetzt nur noch als Selektor für JS,
-   der initiale Zustand wird durch die obige .project-animate Regel gesetzt.
-   Die Animation wird durch .fadeInUp-active getriggert.
-   Die spezifische Regel für .project-item.project-animate kann vereinfacht werden,
-   da der initiale Zustand jetzt generischer ist.
-*/
+/* --- Adjustment for .project-animate (Project Items) --- */
 .project-item.project-animate {
     background-color: var(--bg-tertiary-content);
     padding: 20px;
@@ -840,37 +830,32 @@ html.high-contrast-mode .extended-stats-container.project-stats-variant .stat-de
     display: flex;
     flex-direction: column;
     border: 1px solid var(--border-secondary);
-    /* opacity und transform kommen von der globalen .project-animate Regel */
-    transition: transform 0.3s ease, /* Nur Hover-Effekt Transition hier */
-                box-shadow 0.3s ease-out,
-                background-color 0.35s ease,
-                color 0.35s ease,
-                border-color 0.35s ease;
-    /* Die Animations-Transition (opacity, transform) wird von .fadeInUp-active übernommen */
+    /* opacity and transform come from the global .project-animate rule */
+    transition: transform 0.3s ease, /* Only hover effect transition here */
+    box-shadow 0.3s ease-out,
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
+    /* The animation transition (opacity, transform) is taken over by .fadeInUp-active */
 }
-/* Die .project-item.project-animate.visible Regel wird nicht mehr benötigt,
-   da .fadeInUp-active die Animation steuert. */
 
-/* Stelle sicher, dass section-title-animate auch den initialen Zustand hat */
+/* Ensure that section-title-animate also has the initial state */
 .projects-section h2.section-title-animate {
     font-family: 'Dela Gothic One', cursive;
     font-size: 2.6em;
     color: var(--text-accent);
     text-align: center;
     margin-bottom: 50px;
-    /* opacity und transform vom globalen .section-title-animate oben */
-    /* Die Transition hier ist für die Farbänderung beim Theme-Wechsel, nicht für die Einblendanimation */
+    /* opacity and transform from the global .section-title-animate above */
+    /* The transition here is for the color change during theme switch, not for the fade-in animation */
     transition: color 0.35s ease;
-    /* Die Einblendanimation wird durch .fadeInUp-active gesteuert */
+    /* The fade-in animation is controlled by .fadeInUp-active */
 }
-/* Die .projects-section h2.section-title-animate.visible Regel ist nicht mehr nötig,
-   da .fadeInUp-active die Animation übernimmt. */
 
-/* Ähnlich für footer-animate */
+/* Similar for footer-animate */
 .footer-content.footer-animate {
-    /* opacity und transform vom globalen .footer-animate oben */
-    /* Transition für Farbanpassungen etc. */
+    /* opacity and transform from the global .footer-animate above */
+    /* Transition for color adjustments etc. */
     transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
-    /* Einblendanimation durch .fadeInUp-active */
+    /* Fade-in animation by .fadeInUp-active */
 }
-/* .footer-content.footer-animate.visible nicht mehr nötig */

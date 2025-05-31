@@ -42,37 +42,33 @@
     <style>
         .media-grid {
             display: grid;
-            /* Experimentiere mit diesem Wert, um die gewünschte Größe zu erreichen.
-               Ein höherer Wert macht die Elemente breiter (weniger Spalten). */
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Macht Elemente größer */
-            gap: 1.5rem; /* Abstand zwischen den Elementen */
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
         }
 
         .media-item {
             position: relative;
             overflow: hidden;
-            aspect-ratio: 16 / 9; /* Stellt einheitliches 16:9 Seitenverhältnis sicher */
-            background-color: #2a2438; /* Fallback-Hintergrund, anpassbar */
-            border-radius: 6px; /* Abgerundete Ecken, anpassbar */
+            aspect-ratio: 16 / 9;
+            background-color: #2a2438;
+            border-radius: 6px;
         }
 
-        /* Stellt sicher, dass der Link-Container (für Lightbox) das media-item füllt */
         .media-item .lightbox-trigger {
             display: block;
             width: 100%;
             height: 100%;
         }
 
-        .media-item img { /* Gilt für normale Bilder UND GIFs */
+        .media-item img {
             display: block;
             width: 100%;
             height: 100%;
-            object-fit: cover;   /* Skaliert das Bild, um den Container auszufüllen, schneidet ggf. ab */
-            object-position: center; /* Zentriert das Bild vor dem Zuschneiden */
-            border-radius: inherit; /* Übernimmt border-radius vom .media-item */
+            object-fit: cover;
+            object-position: center;
+            border-radius: inherit;
         }
 
-        /* Falls du auch Videos in dieser Galerie hättest, wären diese Regeln relevant: */
         .media-item-video .responsive-iframe-container {
             position: relative;
             width: 100%;
@@ -97,9 +93,9 @@
         <nav class="main-navigation" aria-label="Main navigation">
             <ul>
                 <li><a href="../index.html?category=all#projects"><span class="link-text-wrapper">ALL</span></a></li>
-				<li><a href="../showcases/programming.html"><span class="link-text-wrapper">PROGRAMMING</span></a></li> <!-- Korrigierter Link für Programming -->
+				<li><a href="../showcases/programming.html"><span class="link-text-wrapper">PROGRAMMING</span></a></li>
                 <li><a href="../showcases/3D_art.html"><span class="link-text-wrapper">3D ART</span></a></li>
-                <li><a href="../showcases/ui_design.html"><span class="link-text-wrapper">UI</span></a></li> <!-- Angenommener Link für UI -->
+                <li><a href="../showcases/ui_design.html"><span class="link-text-wrapper">UI</span></a></li>
             </ul>
         </nav>
         <div class="theme-switcher-container">
