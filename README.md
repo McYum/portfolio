@@ -31,7 +31,7 @@ The development process incorporated modern tools for efficiency and collaborati
 
 2.  **AI-Powered Assistance:**
     *   **GitHub Copilot:** Used for real-time code suggestions, autocompletion, and boilerplate code generation, speeding up the development process.
-    *   **Gemini 2.5 (or your specific Gemini version):** Leveraged for code refactoring, problem-solving, generating explanations, and general assistance with more complex coding tasks.
+    *   **Gemini 2.5:** Leveraged for code refactoring, problem-solving, generating explanations, and general assistance with more complex coding tasks.
 
 3.  **Responsive Design & Browser Compatibility:**
     *   **Responsive Design:** The website was designed to be responsive, ensuring optimal display and interaction across various device sizes (desktops, tablets, mobile devices). This also supports accessibility for users who utilize zoom features or have different viewport sizes.
@@ -40,7 +40,3 @@ The development process incorporated modern tools for efficiency and collaborati
 ## Design Inspiration
 
 The initial layout and structural design of this current portfolio were vaguely based on a previous iteration of my personal portfolio, serving as a familiar starting point for the new design.
-
----
-
-This combination of automated and manual checks, along with robust development tools, aimed to create an accessible and well-structured portfolio.
